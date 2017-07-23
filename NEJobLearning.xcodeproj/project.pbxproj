@@ -15,6 +15,14 @@
 		592E6DC61F22EF4A007D8220 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 592E6DC41F22EF4A007D8220 /* LaunchScreen.storyboard */; };
 		592E6DD11F22EF4A007D8220 /* NEJobLearningTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 592E6DD01F22EF4A007D8220 /* NEJobLearningTests.m */; };
 		592E6DDC1F22EF4A007D8220 /* NEJobLearningUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 592E6DDB1F22EF4A007D8220 /* NEJobLearningUITests.m */; };
+		59ABFE6E1F23A350003544B1 /* StaticLibTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ABFE6D1F23A350003544B1 /* StaticLibTest.m */; };
+		59ABFE6F1F23A350003544B1 /* StaticLibTest.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 59ABFE6C1F23A350003544B1 /* StaticLibTest.h */; };
+		59ABFE811F23A4DB003544B1 /* DynamicLibTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59ABFE781F23A4DB003544B1 /* DynamicLibTest.framework */; };
+		59ABFE881F23A4DB003544B1 /* DynamicLibTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ABFE871F23A4DB003544B1 /* DynamicLibTestTests.m */; };
+		59ABFE8A1F23A4DB003544B1 /* DynamicLibTest.h in Headers */ = {isa = PBXBuildFile; fileRef = 59ABFE7A1F23A4DB003544B1 /* DynamicLibTest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		59ABFE8D1F23A4DB003544B1 /* DynamicLibTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59ABFE781F23A4DB003544B1 /* DynamicLibTest.framework */; };
+		59ABFE8E1F23A4DB003544B1 /* DynamicLibTest.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 59ABFE781F23A4DB003544B1 /* DynamicLibTest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		59ABFE961F23A502003544B1 /* StaticLibTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ABFE6D1F23A350003544B1 /* StaticLibTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +40,52 @@
 			remoteGlobalIDString = 592E6DB21F22EF4A007D8220;
 			remoteInfo = NEJobLearning;
 		};
+		59ABFE821F23A4DB003544B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 592E6DAB1F22EF4A007D8220 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 59ABFE771F23A4DB003544B1;
+			remoteInfo = DynamicLibTest;
+		};
+		59ABFE841F23A4DB003544B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 592E6DAB1F22EF4A007D8220 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 592E6DB21F22EF4A007D8220;
+			remoteInfo = NEJobLearning;
+		};
+		59ABFE8B1F23A4DB003544B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 592E6DAB1F22EF4A007D8220 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 59ABFE771F23A4DB003544B1;
+			remoteInfo = DynamicLibTest;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		59ABFE681F23A34F003544B1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				59ABFE6F1F23A350003544B1 /* StaticLibTest.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59ABFE921F23A4DB003544B1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				59ABFE8E1F23A4DB003544B1 /* DynamicLibTest.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		592E6DB31F22EF4A007D8220 /* NEJobLearning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NEJobLearning.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +104,15 @@
 		592E6DD71F22EF4A007D8220 /* NEJobLearningUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NEJobLearningUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		592E6DDB1F22EF4A007D8220 /* NEJobLearningUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NEJobLearningUITests.m; sourceTree = "<group>"; };
 		592E6DDD1F22EF4A007D8220 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59ABFE6A1F23A34F003544B1 /* libStaticLibTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libStaticLibTest.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		59ABFE6C1F23A350003544B1 /* StaticLibTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StaticLibTest.h; sourceTree = "<group>"; };
+		59ABFE6D1F23A350003544B1 /* StaticLibTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StaticLibTest.m; sourceTree = "<group>"; };
+		59ABFE781F23A4DB003544B1 /* DynamicLibTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DynamicLibTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		59ABFE7A1F23A4DB003544B1 /* DynamicLibTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicLibTest.h; sourceTree = "<group>"; };
+		59ABFE7B1F23A4DB003544B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59ABFE801F23A4DB003544B1 /* DynamicLibTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DynamicLibTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		59ABFE871F23A4DB003544B1 /* DynamicLibTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicLibTestTests.m; sourceTree = "<group>"; };
+		59ABFE891F23A4DB003544B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59ABFE8D1F23A4DB003544B1 /* DynamicLibTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +138,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		59ABFE671F23A34F003544B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59ABFE741F23A4DB003544B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59ABFE7D1F23A4DB003544B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59ABFE811F23A4DB003544B1 /* DynamicLibTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -84,6 +169,9 @@
 				592E6DB51F22EF4A007D8220 /* NEJobLearning */,
 				592E6DCF1F22EF4A007D8220 /* NEJobLearningTests */,
 				592E6DDA1F22EF4A007D8220 /* NEJobLearningUITests */,
+				59ABFE6B1F23A350003544B1 /* StaticLibTest */,
+				59ABFE791F23A4DB003544B1 /* DynamicLibTest */,
+				59ABFE861F23A4DB003544B1 /* DynamicLibTestTests */,
 				592E6DB41F22EF4A007D8220 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,6 +182,9 @@
 				592E6DB31F22EF4A007D8220 /* NEJobLearning.app */,
 				592E6DCC1F22EF4A007D8220 /* NEJobLearningTests.xctest */,
 				592E6DD71F22EF4A007D8220 /* NEJobLearningUITests.xctest */,
+				59ABFE6A1F23A34F003544B1 /* libStaticLibTest.a */,
+				59ABFE781F23A4DB003544B1 /* DynamicLibTest.framework */,
+				59ABFE801F23A4DB003544B1 /* DynamicLibTestTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,7 +231,45 @@
 			path = NEJobLearningUITests;
 			sourceTree = "<group>";
 		};
+		59ABFE6B1F23A350003544B1 /* StaticLibTest */ = {
+			isa = PBXGroup;
+			children = (
+				59ABFE6C1F23A350003544B1 /* StaticLibTest.h */,
+				59ABFE6D1F23A350003544B1 /* StaticLibTest.m */,
+			);
+			path = StaticLibTest;
+			sourceTree = "<group>";
+		};
+		59ABFE791F23A4DB003544B1 /* DynamicLibTest */ = {
+			isa = PBXGroup;
+			children = (
+				59ABFE7A1F23A4DB003544B1 /* DynamicLibTest.h */,
+				59ABFE7B1F23A4DB003544B1 /* Info.plist */,
+			);
+			path = DynamicLibTest;
+			sourceTree = "<group>";
+		};
+		59ABFE861F23A4DB003544B1 /* DynamicLibTestTests */ = {
+			isa = PBXGroup;
+			children = (
+				59ABFE871F23A4DB003544B1 /* DynamicLibTestTests.m */,
+				59ABFE891F23A4DB003544B1 /* Info.plist */,
+			);
+			path = DynamicLibTestTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		59ABFE751F23A4DB003544B1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59ABFE8A1F23A4DB003544B1 /* DynamicLibTest.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		592E6DB21F22EF4A007D8220 /* NEJobLearning */ = {
@@ -150,10 +279,12 @@
 				592E6DAF1F22EF4A007D8220 /* Sources */,
 				592E6DB01F22EF4A007D8220 /* Frameworks */,
 				592E6DB11F22EF4A007D8220 /* Resources */,
+				59ABFE921F23A4DB003544B1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				59ABFE8C1F23A4DB003544B1 /* PBXTargetDependency */,
 			);
 			name = NEJobLearning;
 			productName = NEJobLearning;
@@ -196,6 +327,60 @@
 			productReference = 592E6DD71F22EF4A007D8220 /* NEJobLearningUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		59ABFE691F23A34F003544B1 /* StaticLibTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 59ABFE721F23A350003544B1 /* Build configuration list for PBXNativeTarget "StaticLibTest" */;
+			buildPhases = (
+				59ABFE661F23A34F003544B1 /* Sources */,
+				59ABFE671F23A34F003544B1 /* Frameworks */,
+				59ABFE681F23A34F003544B1 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StaticLibTest;
+			productName = StaticLibTest;
+			productReference = 59ABFE6A1F23A34F003544B1 /* libStaticLibTest.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		59ABFE771F23A4DB003544B1 /* DynamicLibTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 59ABFE8F1F23A4DB003544B1 /* Build configuration list for PBXNativeTarget "DynamicLibTest" */;
+			buildPhases = (
+				59ABFE731F23A4DB003544B1 /* Sources */,
+				59ABFE741F23A4DB003544B1 /* Frameworks */,
+				59ABFE751F23A4DB003544B1 /* Headers */,
+				59ABFE761F23A4DB003544B1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DynamicLibTest;
+			productName = DynamicLibTest;
+			productReference = 59ABFE781F23A4DB003544B1 /* DynamicLibTest.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		59ABFE7F1F23A4DB003544B1 /* DynamicLibTestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 59ABFE931F23A4DB003544B1 /* Build configuration list for PBXNativeTarget "DynamicLibTestTests" */;
+			buildPhases = (
+				59ABFE7C1F23A4DB003544B1 /* Sources */,
+				59ABFE7D1F23A4DB003544B1 /* Frameworks */,
+				59ABFE7E1F23A4DB003544B1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				59ABFE831F23A4DB003544B1 /* PBXTargetDependency */,
+				59ABFE851F23A4DB003544B1 /* PBXTargetDependency */,
+			);
+			name = DynamicLibTestTests;
+			productName = DynamicLibTestTests;
+			productReference = 59ABFE801F23A4DB003544B1 /* DynamicLibTestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -219,6 +404,19 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 592E6DB21F22EF4A007D8220;
 					};
+					59ABFE691F23A34F003544B1 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
+					59ABFE771F23A4DB003544B1 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
+					59ABFE7F1F23A4DB003544B1 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 592E6DB21F22EF4A007D8220;
+					};
 				};
 			};
 			buildConfigurationList = 592E6DAE1F22EF4A007D8220 /* Build configuration list for PBXProject "NEJobLearning" */;
@@ -237,6 +435,9 @@
 				592E6DB21F22EF4A007D8220 /* NEJobLearning */,
 				592E6DCB1F22EF4A007D8220 /* NEJobLearningTests */,
 				592E6DD61F22EF4A007D8220 /* NEJobLearningUITests */,
+				59ABFE691F23A34F003544B1 /* StaticLibTest */,
+				59ABFE771F23A4DB003544B1 /* DynamicLibTest */,
+				59ABFE7F1F23A4DB003544B1 /* DynamicLibTestTests */,
 			);
 		};
 /* End PBXProject section */
@@ -260,6 +461,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		592E6DD51F22EF4A007D8220 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59ABFE761F23A4DB003544B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59ABFE7E1F23A4DB003544B1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -295,6 +510,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		59ABFE661F23A34F003544B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59ABFE6E1F23A350003544B1 /* StaticLibTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59ABFE731F23A4DB003544B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59ABFE961F23A502003544B1 /* StaticLibTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59ABFE7C1F23A4DB003544B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59ABFE881F23A4DB003544B1 /* DynamicLibTestTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -307,6 +546,21 @@
 			isa = PBXTargetDependency;
 			target = 592E6DB21F22EF4A007D8220 /* NEJobLearning */;
 			targetProxy = 592E6DD81F22EF4A007D8220 /* PBXContainerItemProxy */;
+		};
+		59ABFE831F23A4DB003544B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 59ABFE771F23A4DB003544B1 /* DynamicLibTest */;
+			targetProxy = 59ABFE821F23A4DB003544B1 /* PBXContainerItemProxy */;
+		};
+		59ABFE851F23A4DB003544B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 592E6DB21F22EF4A007D8220 /* NEJobLearning */;
+			targetProxy = 59ABFE841F23A4DB003544B1 /* PBXContainerItemProxy */;
+		};
+		59ABFE8C1F23A4DB003544B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 59ABFE771F23A4DB003544B1 /* DynamicLibTest */;
+			targetProxy = 59ABFE8B1F23A4DB003544B1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -425,6 +679,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NEJobLearning/Info.plist;
+				LD_GENERATE_MAP_FILE = NO;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.neareast.NEJobLearning;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -436,6 +691,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NEJobLearning/Info.plist;
+				LD_GENERATE_MAP_FILE = NO;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.neareast.NEJobLearning;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -488,6 +744,94 @@
 			};
 			name = Release;
 		};
+		59ABFE701F23A350003544B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				LD_GENERATE_MAP_FILE = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		59ABFE711F23A350003544B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				LD_GENERATE_MAP_FILE = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		59ABFE901F23A4DB003544B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				INFOPLIST_FILE = DynamicLibTest/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_GENERATE_MAP_FILE = NO;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.neareast.DynamicLibTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		59ABFE911F23A4DB003544B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				INFOPLIST_FILE = DynamicLibTest/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_GENERATE_MAP_FILE = NO;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.neareast.DynamicLibTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		59ABFE941F23A4DB003544B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DynamicLibTestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.neareast.DynamicLibTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NEJobLearning.app/NEJobLearning";
+			};
+			name = Debug;
+		};
+		59ABFE951F23A4DB003544B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DynamicLibTestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.neareast.DynamicLibTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NEJobLearning.app/NEJobLearning";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -507,6 +851,7 @@
 				592E6DE21F22EF4A007D8220 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		592E6DE31F22EF4A007D8220 /* Build configuration list for PBXNativeTarget "NEJobLearningTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +860,7 @@
 				592E6DE51F22EF4A007D8220 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		592E6DE61F22EF4A007D8220 /* Build configuration list for PBXNativeTarget "NEJobLearningUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +869,34 @@
 				592E6DE81F22EF4A007D8220 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		59ABFE721F23A350003544B1 /* Build configuration list for PBXNativeTarget "StaticLibTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59ABFE701F23A350003544B1 /* Debug */,
+				59ABFE711F23A350003544B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		59ABFE8F1F23A4DB003544B1 /* Build configuration list for PBXNativeTarget "DynamicLibTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59ABFE901F23A4DB003544B1 /* Debug */,
+				59ABFE911F23A4DB003544B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		59ABFE931F23A4DB003544B1 /* Build configuration list for PBXNativeTarget "DynamicLibTestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59ABFE941F23A4DB003544B1 /* Debug */,
+				59ABFE951F23A4DB003544B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

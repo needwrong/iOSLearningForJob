@@ -48,6 +48,16 @@
                ReferencedContainer = "container:NEJobLearning.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "59ABFE7F1F23A4DB003544B1"
+               BuildableName = "DynamicLibTestTests.xctest"
+               BlueprintName = "DynamicLibTestTests"
+               ReferencedContainer = "container:NEJobLearning.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
