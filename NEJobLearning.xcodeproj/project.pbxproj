@@ -15,6 +15,7 @@
 		592E6DC61F22EF4A007D8220 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 592E6DC41F22EF4A007D8220 /* LaunchScreen.storyboard */; };
 		592E6DD11F22EF4A007D8220 /* NEJobLearningTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 592E6DD01F22EF4A007D8220 /* NEJobLearningTests.m */; };
 		592E6DDC1F22EF4A007D8220 /* NEJobLearningUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 592E6DDB1F22EF4A007D8220 /* NEJobLearningUITests.m */; };
+		59A014931F2623A90001F826 /* NETableViewTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59A014921F2623A90001F826 /* NETableViewTestViewController.m */; };
 		59ABFE6E1F23A350003544B1 /* StaticLibTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ABFE6D1F23A350003544B1 /* StaticLibTest.m */; };
 		59ABFE6F1F23A350003544B1 /* StaticLibTest.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 59ABFE6C1F23A350003544B1 /* StaticLibTest.h */; };
 		59ABFE811F23A4DB003544B1 /* DynamicLibTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59ABFE781F23A4DB003544B1 /* DynamicLibTest.framework */; };
@@ -104,6 +105,8 @@
 		592E6DD71F22EF4A007D8220 /* NEJobLearningUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NEJobLearningUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		592E6DDB1F22EF4A007D8220 /* NEJobLearningUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NEJobLearningUITests.m; sourceTree = "<group>"; };
 		592E6DDD1F22EF4A007D8220 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59A014911F2623A90001F826 /* NETableViewTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NETableViewTestViewController.h; sourceTree = "<group>"; };
+		59A014921F2623A90001F826 /* NETableViewTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NETableViewTestViewController.m; sourceTree = "<group>"; };
 		59ABFE6A1F23A34F003544B1 /* libStaticLibTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libStaticLibTest.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		59ABFE6C1F23A350003544B1 /* StaticLibTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StaticLibTest.h; sourceTree = "<group>"; };
 		59ABFE6D1F23A350003544B1 /* StaticLibTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StaticLibTest.m; sourceTree = "<group>"; };
@@ -196,6 +199,8 @@
 				592E6DBA1F22EF4A007D8220 /* AppDelegate.m */,
 				592E6DBC1F22EF4A007D8220 /* ViewController.h */,
 				592E6DBD1F22EF4A007D8220 /* ViewController.m */,
+				59A014911F2623A90001F826 /* NETableViewTestViewController.h */,
+				59A014921F2623A90001F826 /* NETableViewTestViewController.m */,
 				592E6DBF1F22EF4A007D8220 /* Main.storyboard */,
 				592E6DC21F22EF4A007D8220 /* Assets.xcassets */,
 				592E6DC41F22EF4A007D8220 /* LaunchScreen.storyboard */,
@@ -491,6 +496,7 @@
 				592E6DBE1F22EF4A007D8220 /* ViewController.m in Sources */,
 				592E6DBB1F22EF4A007D8220 /* AppDelegate.m in Sources */,
 				592E6DB81F22EF4A007D8220 /* main.m in Sources */,
+				59A014931F2623A90001F826 /* NETableViewTestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

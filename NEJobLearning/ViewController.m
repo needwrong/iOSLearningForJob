@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "NETableViewTestViewController.h"
 
 @interface ViewController ()
 
@@ -18,9 +19,19 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
-//    [self animationTestBasic];
-    [self animationTestSpringGroupDynamic];
-    [self UIDynamicTest];
+    [self animationTestBasic];
+//    [self animationTestSpringGroupDynamic];
+//    [self UIDynamicTest];
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    
+    __weak typeof(self) weakSelf = self;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        NETableViewTestViewController *tableViewTestVC = [[NETableViewTestViewController alloc] init];
+//        [weakSelf presentViewController:tableViewTestVC animated:YES completion:nil];
+
+        
+    });
 }
 
 - (void)animationTestBasic {
@@ -114,7 +125,7 @@
 //    }];
 
     
-    //7.keyframe动画
+    //7.keyframe动画  transitionWithView等更多UIView动画：http://www.jianshu.com/p/5abc038e4d94
     [UIView animateKeyframesWithDuration:9.0 delay:0.f options:UIViewKeyframeAnimationOptionCalculationModeLinear animations:^{
         [UIView addKeyframeWithRelativeStartTime:0.f relativeDuration:1.0 / 4 animations:^{
             view.backgroundColor = [UIColor colorWithRed:0.9475 green:0.1921 blue:0.1746 alpha:1.0];
