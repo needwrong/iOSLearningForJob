@@ -6,14 +6,13 @@
 //  Copyright © 2017年 neareast. All rights reserved.
 //
 
-#import "ViewController.h"
-#import "NETableViewTestViewController.h"
+#import "NEAnimationTestViewController.h"
 
-@interface ViewController ()
+@interface NEAnimationTestViewController ()
 
 @end
 
-@implementation ViewController
+@implementation NEAnimationTestViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,16 +21,6 @@
     [self animationTestBasic];
 //    [self animationTestSpringGroupDynamic];
 //    [self UIDynamicTest];
-    
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    
-    __weak typeof(self) weakSelf = self;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        NETableViewTestViewController *tableViewTestVC = [[NETableViewTestViewController alloc] init];
-//        [weakSelf presentViewController:tableViewTestVC animated:YES completion:nil];
-
-        
-    });
 }
 
 - (void)animationTestBasic {
