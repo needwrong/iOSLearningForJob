@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		592B340E1F2786D500418385 /* NEMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 592B340D1F2786D500418385 /* NEMainTableViewController.m */; };
+		592B34111F29B8A900418385 /* NELogPrintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 592B34101F29B8A900418385 /* NELogPrintViewController.m */; };
 		592E6DB81F22EF4A007D8220 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 592E6DB71F22EF4A007D8220 /* main.m */; };
 		592E6DBB1F22EF4A007D8220 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 592E6DBA1F22EF4A007D8220 /* AppDelegate.m */; };
 		592E6DBE1F22EF4A007D8220 /* NEAnimationTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 592E6DBD1F22EF4A007D8220 /* NEAnimationTestViewController.m */; };
@@ -92,6 +93,8 @@
 /* Begin PBXFileReference section */
 		592B340C1F2786D500418385 /* NEMainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEMainTableViewController.h; sourceTree = "<group>"; };
 		592B340D1F2786D500418385 /* NEMainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEMainTableViewController.m; sourceTree = "<group>"; };
+		592B340F1F29B8A900418385 /* NELogPrintViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NELogPrintViewController.h; sourceTree = "<group>"; };
+		592B34101F29B8A900418385 /* NELogPrintViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NELogPrintViewController.m; sourceTree = "<group>"; };
 		592E6DB31F22EF4A007D8220 /* NEJobLearning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NEJobLearning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		592E6DB71F22EF4A007D8220 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		592E6DB91F22EF4A007D8220 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -204,6 +207,8 @@
 				592B340D1F2786D500418385 /* NEMainTableViewController.m */,
 				59A014911F2623A90001F826 /* NETableViewTestViewController.h */,
 				59A014921F2623A90001F826 /* NETableViewTestViewController.m */,
+				592B340F1F29B8A900418385 /* NELogPrintViewController.h */,
+				592B34101F29B8A900418385 /* NELogPrintViewController.m */,
 				592E6DBF1F22EF4A007D8220 /* Main.storyboard */,
 				592E6DB61F22EF4A007D8220 /* Supporting Files */,
 			);
@@ -500,6 +505,7 @@
 			files = (
 				592E6DBE1F22EF4A007D8220 /* NEAnimationTestViewController.m in Sources */,
 				592E6DBB1F22EF4A007D8220 /* AppDelegate.m in Sources */,
+				592B34111F29B8A900418385 /* NELogPrintViewController.m in Sources */,
 				592E6DB81F22EF4A007D8220 /* main.m in Sources */,
 				592B340E1F2786D500418385 /* NEMainTableViewController.m in Sources */,
 				59A014931F2623A90001F826 /* NETableViewTestViewController.m in Sources */,

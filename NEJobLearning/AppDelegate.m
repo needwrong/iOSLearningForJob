@@ -16,9 +16,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    __weak NSString *str = [[NSString alloc] init];
-    str = @"heihey";
-    NSLog(@"weak str: %@", str);
     
     // Override point for customization after application launch.
     return YES;
