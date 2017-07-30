@@ -77,6 +77,26 @@
                                             <segue destination="Wjn-oS-BuI" kind="show" id="kmQ-sn-gdM"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Dwf-8g-RjV" style="IBUITableViewCellStyleDefault" id="9mF-t1-LZr">
+                                        <rect key="frame" x="0.0" y="132" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9mF-t1-LZr" id="ivy-FK-Sh2">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="button点击区域扩大" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Dwf-8g-RjV">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="eMX-Dh-WPv" kind="show" id="iBX-gP-5gU"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -126,6 +146,57 @@
             </objects>
             <point key="canvasLocation" x="3753" y="-115"/>
         </scene>
+        <!--Responder View Controller-->
+        <scene sceneID="rtg-MH-orp">
+            <objects>
+                <viewController id="eMX-Dh-WPv" customClass="NEResponderViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IOg-J8-ECM"/>
+                        <viewControllerLayoutGuide type="bottom" id="8qR-Oe-eLU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1BD-o7-JiG" customClass="NESpecialResponseView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fZ7-tN-Ahl">
+                                <rect key="frame" x="0.0" y="160" width="275" height="56"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjZ-z8-5eZ" customClass="LCILDEnlargedButton">
+                                        <rect key="frame" x="263" y="15" width="25" height="26"/>
+                                        <color key="backgroundColor" red="1" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="Da0-jA-kx9"/>
+                                            <constraint firstAttribute="height" constant="26" id="RUk-V1-aej"/>
+                                        </constraints>
+                                        <state key="normal" image="flash"/>
+                                        <connections>
+                                            <action selector="btnClicked:" destination="eMX-Dh-WPv" eventType="touchUpInside" id="iR9-8P-Dag"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="zjZ-z8-5eZ" firstAttribute="centerY" secondItem="fZ7-tN-Ahl" secondAttribute="centerY" id="TKU-7x-h3h"/>
+                                    <constraint firstAttribute="height" constant="56" id="eGv-zb-Sid"/>
+                                    <constraint firstAttribute="trailing" secondItem="zjZ-z8-5eZ" secondAttribute="trailing" constant="-13" id="r9Z-bj-6lM"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="fZ7-tN-Ahl" secondAttribute="trailing" constant="100" id="RRr-dQ-83H"/>
+                            <constraint firstItem="fZ7-tN-Ahl" firstAttribute="top" secondItem="IOg-J8-ECM" secondAttribute="bottom" constant="140" id="RXC-7u-yrC"/>
+                            <constraint firstItem="fZ7-tN-Ahl" firstAttribute="leading" secondItem="1BD-o7-JiG" secondAttribute="leading" id="eQw-x2-qhD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btn" destination="zjZ-z8-5eZ" id="wbh-vi-QMS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QsL-Xo-8gR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3200.8000000000002" y="614.84257871064472"/>
+        </scene>
         <!--Animation Test View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -165,4 +236,7 @@
             <point key="canvasLocation" x="1680.8" y="-216.34182908545728"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="flash" width="20" height="20"/>
+    </resources>
 </document>
