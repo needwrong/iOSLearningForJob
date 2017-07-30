@@ -14,6 +14,9 @@
 extern NSString *globalStr;
 extern NSString *constStr;
 extern NSString *constStrP;
+//！！编译报错；其它模块定义的static变量不可引用；可以定义同名static变量
+//extern NSString *staticStr;
+static NSString *staticStr;
 
 @interface NELogPrintViewController ()
 
@@ -27,19 +30,24 @@ extern NSString *constStrP;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    NSLog(@"--------------global variables test-------------------\n");
+
     NSLog(@"[%p]globalStr: %@\n", globalStr, globalStr);
     NSLog(@"[%p]constStr: %@\n", constStr, constStr);
     NSLog(@"[%p]constStrP: %@\n", constStrP, constStrP);
+    NSLog(@"[%p]staticStr: %@\n", staticStr, staticStr);
     globalStr = @"new globalStr";
     constStr = @"new constStr";
     //如果不是NSString，其他类型强行赋值会崩溃；所以extern的声明应与原变量保持完全一致，以免不必要的后果
     constStrP = @"new constStrP";;
-
+    staticStr = @"new staticStr";
     
     NSLog(@"[%p]new globalStr: %@\n", globalStr, globalStr);
     NSLog(@"[%p]new constStr: %@\n", constStr, constStr);
     NSLog(@"[%p]new constStrP: %@\n", constStrP, constStrP);
-    // Do any additional setup after loading the view.
+    NSLog(@"[%p]staticStr: %@\n", staticStr, staticStr);
+    
     
     
     NSLog(@"--------------block test-------------------\n");
@@ -74,6 +82,24 @@ extern NSString *constStrP;
      */
     [self blockTest];//当此代码结束时,blockTest函数中的所有存储在栈区的变量都会被系统释放, 因此如果属性的block是用assign修饰时,当再次访问时就会出现野指针访问.
     self.mBlock();
+    
+    
+    
+    NSLog(@"-------------- gcd test-------------------\n");
+
+    //创建参数需大于等于0；否则创建失败
+    dispatch_semaphore_t s = dispatch_semaphore_create(0);
+    //返回0表示成功，非0表示失败
+    long r = dispatch_semaphore_wait(s, DISPATCH_TIME_NOW);
+    NSLog(@"dispatch_semaphore_wait result %ld\n", r);
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    self.navigationController.navigationBarHidden = NO;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)blockTest {

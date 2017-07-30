@@ -100,6 +100,14 @@ static NSString *staticStr = @"staticStr";
     self.view.backgroundColor = [UIColor lightGrayColor];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    //7. 其他模块可以通过extern引用并修改本模块定义的全局变量
+    NSLog(@"[%p]globalStr: %@\n", globalStr, globalStr);
+    NSLog(@"[%p]constStr: %@\n", constStr, constStr);
+    NSLog(@"[%p]constStrP: %@\n", constStrP, constStrP);
+    NSLog(@"[%p]staticStr: %@\n", staticStr, staticStr);
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
