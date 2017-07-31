@@ -18,8 +18,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
-    [self animationTestBasic];
-//    [self animationTestSpringGroupDynamic];
+//    [self animationTestBasic];
+    [self animationTestSpringGroupDynamic];
 //    [self UIDynamicTest];
 }
 
@@ -115,7 +115,7 @@
 
     
     //7.keyframe动画  transitionWithView等更多UIView动画：http://www.jianshu.com/p/5abc038e4d94
-    [UIView animateKeyframesWithDuration:9.0 delay:0.f options:UIViewKeyframeAnimationOptionCalculationModeLinear animations:^{
+    [UIView animateKeyframesWithDuration:9.0 delay:0.f options:UIViewKeyframeAnimationOptionCalculationModeLinear | UIViewAnimationOptionRepeat animations:^{
         [UIView addKeyframeWithRelativeStartTime:0.f relativeDuration:1.0 / 4 animations:^{
             view.backgroundColor = [UIColor colorWithRed:0.9475 green:0.1921 blue:0.1746 alpha:1.0];
         }];
@@ -129,9 +129,11 @@
             view.backgroundColor = [UIColor colorWithRed:0.619 green:0.037 blue:0.6719 alpha:1.0];
         }];
     } completion:^(BOOL finished) {
-        NSLog(@"keyframe动画结束");
+        NSLog(@"keyframe动画结束，状态%@", finished ? @"finished" : @"unfinished");
     }];
     
+    [UIView setAnimationRepeatCount:0];
+    [UIView commitAnimations];
     
     
     //8、动画组

@@ -75,7 +75,6 @@ static NSString *staticStr;
     
     
     /*
-     
      由以上三个例子可以看出当block没有访问外界的变量时,是存储在代码区,
      当block访问外界变量时时存储在栈区, 而此时的block出了作用域就会被释放
      以下示例:
@@ -85,13 +84,21 @@ static NSString *staticStr;
     
     
     
-    NSLog(@"-------------- gcd test-------------------\n");
+    NSLog(@"-------------- gcd test -------------------\n");
 
-    //创建参数需大于等于0；否则创建失败
+    //4、 创建参数需大于等于0；否则创建失败
     dispatch_semaphore_t s = dispatch_semaphore_create(0);
     //返回0表示成功，非0表示失败
     long r = dispatch_semaphore_wait(s, DISPATCH_TIME_NOW);
     NSLog(@"dispatch_semaphore_wait result %ld\n", r);
+    
+    
+    
+    NSLog(@"----------------other test ---------------------\n");
+    NSData *data = [[NSData alloc] init];
+    //5、 任意遵循NSCopying协议的类型都可以作为字典的Key
+    NSDictionary *dic = @{data:@"data from data key", @"data": @"data from string key"};
+    NSLog(@"%@\n%@\n", [dic objectForKey:data], [dic objectForKey:@"data"]);
 }
 
 - (void)viewWillAppear:(BOOL)animated {
