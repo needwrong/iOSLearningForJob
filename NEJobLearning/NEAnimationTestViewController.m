@@ -53,23 +53,25 @@
     //4.默认动画结束后移除动画；动画fillmode不变
     CABasicAnimation *positionAnim = [CABasicAnimation animationWithKeyPath:@"position"];
     positionAnim.duration = 3;
-    //设置fromValue很关键，否则下面设置layer的值之后，动画没了效果
+    //4.1 设置fromValue很关键，否则下面设置layer的值之后，动画没了效果
+    //如果已经有别的动画正在执行，我们需要从呈现图层那里去获得fromValue
     positionAnim.fromValue = [NSValue valueWithCGPoint:view.layer.position];
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
     positionAnim.toValue = [NSValue valueWithCGPoint:CGPointMake(screenSize.width / 2, screenSize.height / 2)];
     [view.layer addAnimation:positionAnim forKey:@"move"];
     
-    
-    [CATransaction begin];
-    [CATransaction setDisableActions:YES];
+    //4.2 设置动画结束时layer的状态
+    //4.3 如果这里的图层并不是UIView关联的图层，我们需要用CATransaction来禁用隐式动画行为，否则默认的图层行为会干扰我们的显式动画（实际上，显式动画通常会覆盖隐式动画，但为了安全最好这么做）。
+//    [CATransaction begin];
+//    [CATransaction setDisableActions:YES];
     [view.layer setValue:positionAnim.toValue forKey:positionAnim.keyPath];
-    [CATransaction commit];
+//    [CATransaction commit];
     
+    //5. 旋转之后，view的Frame与bounds的宽高可能不同
     NSLog(@"view: %@\nbounds: %@", NSStringFromCGRect(view.frame), NSStringFromCGRect(view.bounds));
     
     
-    
-    //5.一个动画未结束，开启另一个动画
+    //6. 一个动画未结束，开启另一个动画
     CABasicAnimation *transformAnim = [CABasicAnimation animationWithKeyPath:@"transform"];
     transformAnim.duration = 2;
     
@@ -84,10 +86,10 @@
     
     //此动画延后开启，可以延时更改model layer状态而不设置fillMode
     //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-    [CATransaction begin];
-    [CATransaction setDisableActions:YES];
+//    [CATransaction begin];
+//    [CATransaction setDisableActions:YES];
     [view.layer setValue:transformAnim.toValue forKey:transformAnim.keyPath];
-    [CATransaction commit];
+//    [CATransaction commit];
     //    });
     
     NSLog(@"view: %@\nbounds: %@", NSStringFromCGRect(view.frame), NSStringFromCGRect(view.bounds));
@@ -98,7 +100,7 @@
     view.backgroundColor = [UIColor redColor];
     [self.view addSubview:view];
 
-//    //6.spring动画 更适合用于位移动画  http://www.jianshu.com/p/90a7a1787d1b
+//    //7.spring动画 更适合用于位移动画  http://www.jianshu.com/p/90a7a1787d1b
     CASpringAnimation *springAmin = [CASpringAnimation animationWithKeyPath:@"position"];
 //    springAmin.beginTime = CACurrentMediaTime() + 1;
 //    springAmin.fromValue = [NSValue valueWithCATransform3D:CATransform3DMakeScale(.7, .7, 1)];
@@ -114,7 +116,7 @@
 //    }];
 
     
-    //7.keyframe动画  transitionWithView等更多UIView动画：http://www.jianshu.com/p/5abc038e4d94
+    //8.keyframe动画  transitionWithView等更多UIView动画：http://www.jianshu.com/p/5abc038e4d94
     [UIView animateKeyframesWithDuration:9.0 delay:0.f options:UIViewKeyframeAnimationOptionCalculationModeLinear | UIViewAnimationOptionRepeat animations:^{
         [UIView addKeyframeWithRelativeStartTime:0.f relativeDuration:1.0 / 4 animations:^{
             view.backgroundColor = [UIColor colorWithRed:0.9475 green:0.1921 blue:0.1746 alpha:1.0];
@@ -132,11 +134,45 @@
         NSLog(@"keyframe动画结束，状态%@", finished ? @"finished" : @"unfinished");
     }];
     
-    [UIView setAnimationRepeatCount:0];
-    [UIView commitAnimations];
+    //9. 停止UIView动画
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        CALayer *pLayer = view.layer.presentationLayer;
+        
+        //9.1、删除所有动画；暴力而效果不好
+//        [view.layer removeAllAnimations];
+        
+        //9.2、相同属性使用uiview动画
+//        [UIView beginAnimations:nil context:nil];
+//        [UIView setAnimationDuration:.001];
+//        [UIView setAnimationRepeatCount:0];
+//        view.backgroundColor = [UIColor colorWithCGColor:pLayer.backgroundColor];
+//        [UIView commitAnimations];
+        
+        
+        //9.3、相同属性使用uiview动画
+//        [UIView animateWithDuration:0.001
+//                         animations:^{
+//                             //停止了上面的backgroundcolor动画
+//                             view.backgroundColor = [UIColor colorWithCGColor:pLayer.backgroundColor];
+//                         } completion:nil];
+        //9.4、同上
+//        [UIView animateWithDuration:0.001
+//                              delay:0
+//                            options:UIViewAnimationOptionBeginFromCurrentState
+//                         animations:^{
+//                              view.backgroundColor = [UIColor colorWithCGColor:pLayer.backgroundColor];
+//                         } completion:nil];
+        
+        //9.5、同上
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationBeginsFromCurrentState:YES];
+        [UIView setAnimationDuration:0.001];
+        view.backgroundColor = [UIColor colorWithCGColor:pLayer.backgroundColor];
+        [UIView commitAnimations];
+        
+    });
     
-    
-    //8、动画组
+    //10. 动画组
     //贝塞尔曲线路径
     UIBezierPath *movePath = [UIBezierPath bezierPath];
     [movePath moveToPoint:CGPointMake(10.0, 10.0)];
@@ -164,13 +200,6 @@
     animGroup.fillMode = kCAFillModeForwards;
     
     [view.layer addAnimation:animGroup forKey:@"group"];
-    
-    
-//    CAAnimationGroup *animGroup = [CAAnimationGroup animation];
-//    animGroup.animations = @[positionAnim, transformAnim, springAmin];
-//    animGroup.removedOnCompletion = NO;
-//    animGroup.fillMode = kCAFillModeBoth;
-//    [view.layer addAnimation:animGroup forKey:@"group"];
 }
 
 - (void)UIDynamicTest {
