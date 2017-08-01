@@ -35,7 +35,7 @@ static __weak NELogPrintViewController *thisVC;
     thisVC = self;
     [self.txtViewLogPrint addObserver:self forKeyPath:@"bounds" options:NSKeyValueObservingOptionNew context:nil];
     
-    NSLog(@"--------------global variables test-------------------\n");
+    NSLog(@"-------------- global variables test -------------------\n");
 
     NSLog(@"[%p]globalStr: %@\n", globalStr, globalStr);
     NSLog(@"[%p]constStr: %@\n", constStr, constStr);
@@ -52,45 +52,14 @@ static __weak NELogPrintViewController *thisVC;
     NSLog(@"[%p]new constStrP: %@\n", constStrP, constStrP);
     NSLog(@"[%p]staticStr: %@\n", staticStr, staticStr);
     
-    
-    
-    NSLog(@"--------------block test-------------------\n");
-    //1 __NSGlobalBlock__  全局block   存储在代码区（存储方法或者函数）
-    void(^myBlock1)() = ^() {
-        NSLog(@"我是老大");
-    };
-    NSLog(@"%@\n",myBlock1);
-    
-    //2 __NSStackBlock__  栈block  存储在栈区
-    //block内部访问外部变量
-    //block的本质是一个结构体
-    int n = 5;
-    void(^myBlock2)() = ^() {
-        NSLog(@"我是老二%d", n);
-    };
-    NSLog(@"%@\n", myBlock2);
-    
-    
-    //3 __NSMallocBlock__  堆block 存储在堆区  对栈block做一次copy操作
-    void(^myBlock3)() = ^() {
-        NSLog(@"我是老三%d", n);
-    };
-    NSLog(@"%@\n", [myBlock3 copy]);
-    
-    
-    /*
-     由以上三个例子可以看出当block没有访问外界的变量时,是存储在代码区,
-     当block访问外界变量时时存储在栈区, 而此时的block出了作用域就会被释放
-     以下示例:
-     */
-    [self blockTest];//当此代码结束时,blockTest函数中的所有存储在栈区的变量都会被系统释放, 因此如果属性的block是用assign修饰时,当再次访问时就会出现野指针访问.
-    self.mBlock();
-    
-    
+
+    NSLog(@"-------------- block test -------------------\n");
+    [self blockTest];
+
     
     NSLog(@"-------------- gcd test -------------------\n");
 
-    //4、 创建参数需大于等于0；否则创建失败
+    //5、 创建参数需大于等于0；否则创建失败
     dispatch_semaphore_t s = dispatch_semaphore_create(0);
     //返回0表示成功，非0表示失败
     long r = dispatch_semaphore_wait(s, DISPATCH_TIME_NOW);
@@ -98,9 +67,9 @@ static __weak NELogPrintViewController *thisVC;
     
     
     
-    NSLog(@"----------------other test ---------------------\n");
+    NSLog(@"---------------- other test ---------------------\n");
     NSData *data = [[NSData alloc] init];
-    //5、 任意遵循NSCopying协议的类型都可以作为字典的Key
+    //6、 任意遵循NSCopying协议的类型都可以作为字典的Key
     NSDictionary *dic = @{data:@"data from data key", @"data": @"data from string key"};
     NSLog(@"%@\n%@\n", [dic objectForKey:data], [dic objectForKey:@"data"]);
     
@@ -136,6 +105,42 @@ static __weak NELogPrintViewController *thisVC;
 
 #pragma mark - test methods
 - (void)blockTest {
+    //1 __NSGlobalBlock__  全局block   存储在代码区（存储方法或者函数）
+    void(^myBlock1)() = ^() {
+        NSLog(@"我是老大");
+    };
+    NSLog(@"%@\n",myBlock1);
+    
+    //2 __NSStackBlock__  栈block  存储在栈区；ARC中为自动释放的__NSMallocBlock
+    //block内部访问外部变量
+    //block的本质是一个结构体
+    int n = 5;
+    void(^myBlock2)() = ^() {
+        NSLog(@"我是老二%d", n);
+    };
+    NSLog(@"%@\n", myBlock2);
+    
+    
+    //3 __NSMallocBlock__  堆block 存储在堆区  对栈block做一次copy操作
+    void(^myBlock3)() = ^() {
+        NSLog(@"我是老三%d", n);
+    };
+    NSLog(@"%@\n", [myBlock3 copy]);
+    
+    
+    /*
+     由以上三个例子可以看出当block没有访问外界的变量时,是存储在代码区,
+     当block访问外界变量时时存储在栈区, 而此时的block出了作用域就会被释放
+     以下示例:
+     */
+    [self blockMemoryTest];//当此代码结束时,blockTest函数中的所有存储在栈区的变量都会被系统释放, 因此如果属性的block是用assign修饰时,当再次访问时就会出现野指针访问.
+    self.mBlock();
+    
+    //MRC下崩溃：error: returning block that lives on the local stack.
+    blockClosureTest();
+}
+
+- (void)blockMemoryTest {
     int n = 5;
     __weak typeof(self) weakSelf = self;
     [self setMBlock:^{
@@ -144,7 +149,23 @@ static __weak NELogPrintViewController *thisVC;
     NSLog(@"test--%@\n",self.mBlock);
 }
 
-//6、runloop状态监听测试
+//4、 MRC和ARC对局部Stack的处理不同；ARC中，局部Stack被标记为autorelease的NSMallocBlock
+//http://blog.devtang.com/2013/07/28/a-look-inside-blocks/
+//http://blog.parse.com/learn/engineering/objective-c-blocks-quiz/
+typedef void (^dBlock)();
+dBlock getBlock() {
+    char *d = "heap in ARC, stack in MRC\n";
+    return ^{
+        printf("%s", d);
+    };
+}
+
+void blockClosureTest() {
+    getBlock()();
+}
+
+#pragma mark - runloop
+//7、runloop状态监听测试
 - (void)testRunloop {
     // 获取当前线程的Run Loop
     NSRunLoop *myRunLoop = [NSRunLoop currentRunLoop];
