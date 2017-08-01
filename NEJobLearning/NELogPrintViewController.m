@@ -9,7 +9,7 @@
 #import "NELogPrintViewController.h"
 
 #define NEPrintLog 1
-#define NSLog(FORMAT, ...) [self logPrintString:[NSString stringWithFormat:FORMAT, ##__VA_ARGS__]]
+#define ViewLog(FORMAT, ...) [self logPrintString:[NSString stringWithFormat:FORMAT, ##__VA_ARGS__]]
 
 extern NSString *globalStr;
 extern NSString *constStr;
@@ -25,11 +25,15 @@ static NSString *staticStr;
 
 @end
 
+//类外方法使用
+static __weak NELogPrintViewController *thisVC;
+
 @implementation NELogPrintViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    thisVC = self;
+    [self.txtViewLogPrint addObserver:self forKeyPath:@"bounds" options:NSKeyValueObservingOptionNew context:nil];
     
     NSLog(@"--------------global variables test-------------------\n");
 
@@ -99,6 +103,8 @@ static NSString *staticStr;
     //5、 任意遵循NSCopying协议的类型都可以作为字典的Key
     NSDictionary *dic = @{data:@"data from data key", @"data": @"data from string key"};
     NSLog(@"%@\n%@\n", [dic objectForKey:data], [dic objectForKey:@"data"]);
+    
+    [self performSelectorInBackground:@selector(testRunloop) withObject:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -109,23 +115,98 @@ static NSString *staticStr;
     self.navigationController.navigationBarHidden = YES;
 }
 
-- (void)blockTest {
-    int n = 5;
-    __weak typeof(self) weakSelf = self;
-    [self setMBlock:^{
-        [weakSelf logPrintString:[NSString stringWithFormat:@"%d",n]];;
-    }];
-    NSLog(@"test--%@\n",self.mBlock);
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - inner methods
 - (void)logPrintString:(NSString *)str {
-    self.txtViewLogPrint.text = [self.txtViewLogPrint.text stringByAppendingString:str];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.txtViewLogPrint.text = [self.txtViewLogPrint.text stringByAppendingFormat:@"%@\n", str];
+    });
 }
 
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"bounds"]) {
+        NSLog(@"%@ change from %@ to %@", keyPath, [change valueForKey:NSKeyValueChangeNewKey], [change valueForKey:NSKeyValueChangeNewKey]);
+        ;
+    }
+}
+
+#pragma mark - test methods
+- (void)blockTest {
+    int n = 5;
+    __weak typeof(self) weakSelf = self;
+    [self setMBlock:^{
+        [weakSelf logPrintString:[NSString stringWithFormat:@"int in block%d",n]];;
+    }];
+    NSLog(@"test--%@\n",self.mBlock);
+}
+
+//6、runloop状态监听测试
+- (void)testRunloop {
+    // 获取当前线程的Run Loop
+    NSRunLoop *myRunLoop = [NSRunLoop currentRunLoop];
+    // 创建一个Run Loop 观察者对象；观察事件为每次循环的所有活动；
+    CFRunLoopObserverContext context = {0, (__bridge void *)(self), NULL, NULL, NULL};
+    CFRunLoopObserverRef observer = CFRunLoopObserverCreate(kCFAllocatorDefault,
+                                                            kCFRunLoopAllActivities, YES, 0, &myRunLoopObserver, &context);
+    if (observer) {
+        // 将Cocoa的NSRunLoop类型转换成Core Foundation的CFRunLoopRef类型
+        CFRunLoopRef cfLoop = [myRunLoop getCFRunLoop];
+        // 添加观察才对象到该Run Loop 上
+        CFRunLoopAddObserver(cfLoop, observer, kCFRunLoopDefaultMode);
+    }
+    
+    [NSTimer scheduledTimerWithTimeInterval:1 target:self
+                                   selector:@selector(doFireTimer:) userInfo:nil repeats:YES];
+    // 重复启动Run Loop 2次
+    NSInteger loopCount = 2;
+    do {
+        //启动 Run Loop 开始循环，直到指定的时间才结束，这里就是持续1秒；
+        //当调用RunUnitDate方法时，观察者检测到循环已经启动，开始根据循环的各个阶段的事件，调用上面注册的myRunLoopObserver回调函数。
+        [myRunLoop runUntilDate:[NSDate dateWithTimeIntervalSinceNow:2]];
+        // 运行完之后，会再一次调用回调函数，状态是KFRunLoopExit,表示循环结束。
+        loopCount--;
+    } while(loopCount);
+    
+    printf("The End.\n");
+}
+
+- (void)doFireTimer:(NSTimer *)timer {
+    [thisVC logPrintString:@"fire timer"];
+}
+// Run loop观察者的回调函数：
+void myRunLoopObserver(CFRunLoopObserverRef observer, CFRunLoopActivity activity, void *info) {
+    switch (activity) {
+        case kCFRunLoopEntry: {
+            [thisVC logPrintString:@"run loop entry"];
+            break;
+        }
+        case kCFRunLoopBeforeTimers: {
+            [thisVC logPrintString:@"run loop before timers"];
+            break;
+        }
+        case kCFRunLoopBeforeSources: {
+            [thisVC logPrintString:@"run loop before sources"];
+            break;
+        }
+        case kCFRunLoopBeforeWaiting: {
+            [thisVC logPrintString:@"run loop before waiting"];
+            break;
+        }
+        case kCFRunLoopAfterWaiting: {
+            [thisVC logPrintString:@"run loop after waiting"];
+            break;
+        }
+        case kCFRunLoopExit:{
+            [thisVC logPrintString:@"run loop exit"];
+            break;
+        }
+        default:
+            break;
+    }
+}
 
 @end

@@ -10,4 +10,6 @@
 
 @interface NELogPrintViewController : UIViewController
 
+- (void)logPrintString:(NSString *)str;
+
 @end

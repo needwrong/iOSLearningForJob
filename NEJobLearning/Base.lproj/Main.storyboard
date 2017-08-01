@@ -114,7 +114,7 @@
         <!--Log Print View Controller-->
         <scene sceneID="wM7-0G-Ynw">
             <objects>
-                <viewController id="Wjn-oS-BuI" customClass="NELogPrintViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Wjn-oS-BuI" customClass="NELogPrintViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bV1-Kx-zEW"/>
                         <viewControllerLayoutGuide type="bottom" id="NrG-oS-rtU"/>
@@ -133,7 +133,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="1XS-KA-dGV" firstAttribute="leading" secondItem="iMb-CA-mki" secondAttribute="leading" id="I7W-oD-h5T"/>
-                            <constraint firstItem="1XS-KA-dGV" firstAttribute="top" secondItem="bV1-Kx-zEW" secondAttribute="bottom" id="bt1-4N-gXC"/>
+                            <constraint firstItem="1XS-KA-dGV" firstAttribute="top" secondItem="bV1-Kx-zEW" secondAttribute="bottom" id="Ogy-6f-Osl"/>
                             <constraint firstAttribute="trailing" secondItem="1XS-KA-dGV" secondAttribute="trailing" id="cYt-AD-FKe"/>
                             <constraint firstItem="NrG-oS-rtU" firstAttribute="top" secondItem="1XS-KA-dGV" secondAttribute="bottom" id="e7N-YS-BGt"/>
                         </constraints>

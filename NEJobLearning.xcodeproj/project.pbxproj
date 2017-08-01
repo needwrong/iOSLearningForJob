@@ -12,7 +12,6 @@
 		592B34201F2DC9B100418385 /* LCILDEnlargedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 592B341F1F2DC9B100418385 /* LCILDEnlargedButton.m */; };
 		592B34231F2DCC1A00418385 /* NEResponderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 592B34221F2DCC1A00418385 /* NEResponderViewController.m */; };
 		592B34261F2DF39A00418385 /* NESpecialResponseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 592B34251F2DF39A00418385 /* NESpecialResponseView.m */; };
-		592B34281F2DF94F00418385 /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 592B34271F2DF94F00418385 /* readme.md */; };
 		592E6DB81F22EF4A007D8220 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 592E6DB71F22EF4A007D8220 /* main.m */; };
 		592E6DBB1F22EF4A007D8220 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 592E6DBA1F22EF4A007D8220 /* AppDelegate.m */; };
 		592E6DBE1F22EF4A007D8220 /* NEAnimationTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 592E6DBD1F22EF4A007D8220 /* NEAnimationTestViewController.m */; };
@@ -105,7 +104,6 @@
 		592B34221F2DCC1A00418385 /* NEResponderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEResponderViewController.m; sourceTree = "<group>"; };
 		592B34241F2DF39A00418385 /* NESpecialResponseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NESpecialResponseView.h; sourceTree = "<group>"; };
 		592B34251F2DF39A00418385 /* NESpecialResponseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NESpecialResponseView.m; sourceTree = "<group>"; };
-		592B34271F2DF94F00418385 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		592E6DB31F22EF4A007D8220 /* NEJobLearning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NEJobLearning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		592E6DB71F22EF4A007D8220 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		592E6DB91F22EF4A007D8220 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -243,7 +241,6 @@
 		592E6DB61F22EF4A007D8220 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				592B34271F2DF94F00418385 /* readme.md */,
 				592E6DC21F22EF4A007D8220 /* Assets.xcassets */,
 				592E6DC41F22EF4A007D8220 /* LaunchScreen.storyboard */,
 				592E6DC71F22EF4A007D8220 /* Info.plist */,
@@ -537,7 +534,6 @@
 				592B34201F2DC9B100418385 /* LCILDEnlargedButton.m in Sources */,
 				592B34261F2DF39A00418385 /* NESpecialResponseView.m in Sources */,
 				592B340E1F2786D500418385 /* NEMainTableViewController.m in Sources */,
-				592B34281F2DF94F00418385 /* readme.md in Sources */,
 				59A014931F2623A90001F826 /* NETableViewTestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
