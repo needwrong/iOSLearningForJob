@@ -14,12 +14,21 @@
 #define NSLog(...)
 #endif
 
-@interface NECategoryTest : NSObject
+@interface NECategoryTest : NSObject {
+    id privateProperty;
+}
+
+@property (nonatomic, strong) id originalProperty;
 
 - (void)methodOverrideTest;
 
 - (void)methodOverrideWithParam:(NSString *)str;
 
 + (void)callOriginMethodOfName:(NSString *)name onObject:(id)obj;
+
+//用runtime系列方法动态添加一个属性
++ (void)addPropertyWithtarget:(id)target withPropertyName:(NSString *)propertyName withValue:(id)value;
+
+- (void)categoryPropertyTest:(NSString *)newValue;
 
 @end

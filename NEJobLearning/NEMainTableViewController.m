@@ -47,7 +47,11 @@ static NSString *staticStr = @"staticStr";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self categoryOverrideTest];
+    //category及方法覆盖测试
+//    [self categoryOverrideTest];
+    
+    //runtime添加属性测试
+    [self addPropertyAtRuntimeTest];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -104,6 +108,15 @@ static NSString *staticStr = @"staticStr";
     [categoryTest methodOverrideTest];
     [categoryTest methodOverrideWithParam:@"methodOverrideWithParam"];
     [NECategoryTest callOriginMethodOfName:@"methodOverrideTest" onObject:categoryTest];
+}
+
+- (void)addPropertyAtRuntimeTest {
+    NECategoryTest *categoryTest = [[NECategoryTest alloc] init];
+
+    [NECategoryTest addPropertyWithtarget:categoryTest withPropertyName:@"myproperty" withValue:@"myValue"];
+    NSLog(@"got dynamiclly added property :%@", [categoryTest valueForKey:@"myproperty"]);
+    
+    [categoryTest categoryPropertyTest:@"this is a new value"];
 }
 
 - (void)globalStringTest {

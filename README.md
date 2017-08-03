@@ -1,4 +1,4 @@
-## iOS知识点快速回顾
+## iOS知识点实战演练
 一些可能比较生僻或零散的知识的总结，以及易错点的测试；看懂这些代码对于相关知识的理解很有帮助，当然也有助于iOS面试
 > 目前还很不完善，所以暂时不做详细描述；文档与代码不是完全对应，有待后期完善；代码注释基本齐全
 诚挚欢迎碰巧发现并喜欢这个资源的热情人士更正、完善~
@@ -15,6 +15,7 @@ NEMainTableViewController为入口界面，包含知识点：
 1. category方法覆盖相关注意点
 2. load、initialize方法知识点
 3. runtime方法查找
+4. category添加属性的两种方法：除了常见的设置关联对象objc_setAssociatedObject，还演示了用runtime系列方法添加一个完整的property
 
 
 #### NEAnimationTestViewController
