@@ -6,10 +6,15 @@
 
 #### NEMainTableViewController
 NEMainTableViewController为入口界面，包含知识点：
-1. category方法覆盖相关注意点
-2. load、initialize方法知识点
+1. 配合NELogPrintViewController进行全局变量相关测试
+2. NSString调用copy方法相关内存测试
 3. loadView方法使用示例
 
+
+#### NECategoryTest
+1. category方法覆盖相关注意点
+2. load、initialize方法知识点
+3. runtime方法查找
 
 
 #### NEAnimationTestViewController

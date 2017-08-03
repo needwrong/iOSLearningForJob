@@ -29,6 +29,7 @@
 		59ABFE8D1F23A4DB003544B1 /* DynamicLibTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59ABFE781F23A4DB003544B1 /* DynamicLibTest.framework */; };
 		59ABFE8E1F23A4DB003544B1 /* DynamicLibTest.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 59ABFE781F23A4DB003544B1 /* DynamicLibTest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		59ABFE961F23A502003544B1 /* StaticLibTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ABFE6D1F23A350003544B1 /* StaticLibTest.m */; };
+		59F6CF491F32D61C003226E3 /* NECategoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F6CF481F32D61C003226E3 /* NECategoryTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,8 @@
 		59ABFE801F23A4DB003544B1 /* DynamicLibTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DynamicLibTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		59ABFE871F23A4DB003544B1 /* DynamicLibTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicLibTestTests.m; sourceTree = "<group>"; };
 		59ABFE891F23A4DB003544B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59F6CF471F32D61C003226E3 /* NECategoryTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NECategoryTest.h; sourceTree = "<group>"; };
+		59F6CF481F32D61C003226E3 /* NECategoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NECategoryTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +234,8 @@
 				592B34101F29B8A900418385 /* NELogPrintViewController.m */,
 				592B34211F2DCC1A00418385 /* NEResponderViewController.h */,
 				592B34221F2DCC1A00418385 /* NEResponderViewController.m */,
+				59F6CF471F32D61C003226E3 /* NECategoryTest.h */,
+				59F6CF481F32D61C003226E3 /* NECategoryTest.m */,
 				592E6DBF1F22EF4A007D8220 /* Main.storyboard */,
 				592B341D1F2DC9A700418385 /* views */,
 				592E6DB61F22EF4A007D8220 /* Supporting Files */,
@@ -528,6 +533,7 @@
 			files = (
 				592E6DBE1F22EF4A007D8220 /* NEAnimationTestViewController.m in Sources */,
 				592E6DBB1F22EF4A007D8220 /* AppDelegate.m in Sources */,
+				59F6CF491F32D61C003226E3 /* NECategoryTest.m in Sources */,
 				592B34231F2DCC1A00418385 /* NEResponderViewController.m in Sources */,
 				592B34111F29B8A900418385 /* NELogPrintViewController.m in Sources */,
 				592E6DB81F22EF4A007D8220 /* main.m in Sources */,

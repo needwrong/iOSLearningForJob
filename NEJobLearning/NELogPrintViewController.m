@@ -114,8 +114,11 @@ static __weak NELogPrintViewController *thisVC;
     //2 __NSStackBlock__  栈block  存储在栈区；ARC中为自动释放的__NSMallocBlock
     //block内部访问外部变量
     //block的本质是一个结构体
+    
     int n = 5;
     void(^myBlock2)() = ^() {
+        //没有__block修饰不可修改
+//        n = 6;
         NSLog(@"我是老二%d", n);
     };
     NSLog(@"%@\n", myBlock2);
