@@ -111,12 +111,15 @@ static NSString *staticStr = @"staticStr";
 }
 
 - (void)addPropertyAtRuntimeTest {
-    NECategoryTest *categoryTest = [[NECategoryTest alloc] init];
+    [NECategoryTest getPropertyNameList:NECategoryTest.class];
 
+    NECategoryTest *categoryTest = [[NECategoryTest alloc] init];
     [NECategoryTest addPropertyWithtarget:categoryTest withPropertyName:@"myproperty" withValue:@"myValue"];
     NSLog(@"got dynamiclly added property :%@", [categoryTest valueForKey:@"myproperty"]);
     
     [categoryTest categoryPropertyTest:@"this is a new value"];
+    
+    [NECategoryTest getPropertyNameList:NECategoryTest.class];
 }
 
 - (void)globalStringTest {

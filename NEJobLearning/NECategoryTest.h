@@ -29,6 +29,9 @@
 //用runtime系列方法动态添加一个属性
 + (void)addPropertyWithtarget:(id)target withPropertyName:(NSString *)propertyName withValue:(id)value;
 
+//工具方法；打印theClass所有属性的attributes及name
++ (NSArray *)getPropertyNameList:(Class)theClass;
+
 - (void)categoryPropertyTest:(NSString *)newValue;
 
 @end

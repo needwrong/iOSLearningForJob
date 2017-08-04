@@ -37,7 +37,7 @@ NEMainTableViewController为入口界面，包含知识点：
 1. 全局变量如何在其他类中引用个改变
 2. block的测试
 3. GCD的一些测试
-3. runloop状态监听的测试
+4. runloop状态监听的测试
 
 #### NEResponderViewController
 主要演示了如何优雅地扩大一个按钮的点击区域，以及当一个子视图超出父视图范围后，如何响应点击事件，涉及到的知识点：

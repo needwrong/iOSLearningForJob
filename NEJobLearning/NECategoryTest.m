@@ -38,6 +38,7 @@
 
 //13.1 category中添加属性的简便方法；如果不指定getter，默认getter方法名是strInCategory
 //！category中添加属性对类的ivar及property没有影响；也默认没有对应的method
+//缺点是，不能像遍历属性一样的遍历所有关联对象
 @property (nonatomic, strong, getter=getStrInCategory) NSString *strInCategory;
 
 @end
@@ -147,22 +148,15 @@
         return;
     }
     
-    /*
-     objc_property_attribute_t type = { "T", "@\"NSString\"" };
-     objc_property_attribute_t ownership = { "C", "" }; // C = copy
-     objc_property_attribute_t backingivar  = { "V", "_privateName" };
-     objc_property_attribute_t attrs[] = { type, ownership, backingivar };
-     class_addProperty([SomeClass class], "name", attrs, 3);
-     */
-    
-    //objc_property_attribute_t所代表的意思可以调用getPropertyNameList打印，大概就能猜出 ?
+    //objc_property_attribute_t所代表的意思可以调用getPropertyNameList试验一下，大概就能猜出
     objc_property_attribute_t type = { "T", [[NSString stringWithFormat:@"@\"%@\"",NSStringFromClass([value class])] UTF8String] };
-    objc_property_attribute_t ownership = { "&", "N" };
-    objc_property_attribute_t backingivar  = { "V", [[NSString stringWithFormat:@"_%@", propertyName] UTF8String] };
-    objc_property_attribute_t attrs[] = { type, ownership, backingivar };
+    objc_property_attribute_t ownership1 = { "&", "" };
+    objc_property_attribute_t ownership2 = { "N", "" };
+    objc_property_attribute_t backingivar  = { "V", [[NSString stringWithFormat:@"_%@", propertyName] UTF8String] };//！其实并不存在这个backingivar
+    objc_property_attribute_t attrs[] = { type, ownership1, ownership2, backingivar };
     
     //9. 只能添加property，ivar列表不会改变
-    if (class_addProperty([target class], [propertyName UTF8String], attrs, 3)) {
+    if (class_addProperty([target class], [propertyName UTF8String], attrs, 4)) {
         //添加get和set方法
         //10. 新增加的方法位于method list的前面，即methods[0]
         class_addMethod([target class], NSSelectorFromString(propertyName), (IMP)getter, "@@:");
@@ -189,7 +183,8 @@
 }
 
 id getter(id self1, SEL _cmd1) {
-    //12.1 动态添加的property，需借用ivar或static变量来存取属性的值
+    //12.1 动态添加的property
+    //缺点：代码繁琐；需借用ivar或static变量，甚至associatedObject来存取属性的值；而且需要自行考虑内存管理问题
 //    NSString *key = NSStringFromSelector(_cmd1);
 //    objc_property_t property = class_getProperty([self1 class], [key UTF8String]);
 //    Ivar ivar = class_getInstanceVariable([self1 class], [key UTF8String]);
@@ -199,7 +194,7 @@ id getter(id self1, SEL _cmd1) {
 
 static NSString *propertyString;
 void setter(id self1, SEL _cmd1, id newValue) {
-    //12.2 动态添加的property，需借用ivar或static变量来存取属性的值
+    //12.2 动态添加的property，需借用其他变量来存取属性的值
     //http://www.cnblogs.com/feng9exe/p/6040970.html   此文有借用Ivar字典变量的示例，如有需要请参阅
 //    NSString *key = [NSStringFromSelector(_cmd1) stringByReplacingCharactersInRange:NSMakeRange(0, 3) withString:@""];
 //    key = [key lowercaseString];
@@ -208,6 +203,37 @@ void setter(id self1, SEL _cmd1, id newValue) {
 //    object_setIvar(self1, ivar, newValue);
     
     propertyString = newValue;
+}
+
+/* 工具方法；打印theClass所有属性的attributes及name
+ 14. 常用objc_property_attribute_t的value和name
+ attribute           name	value
+ nonatomic              "N"     ""
+ strong/retain          "&"     ""
+ weak                   "W"     ""
+ 属性的类型type           "T"     "@TypeName", eg"@\"NSString\""
+ 属性对应的实例变量Ivar     "V"     "Ivar_name", eg "_name"
+ readonly               "R"     ""
+ getter                 "G"     "GetterName", eg"isRight"
+ setter                 "S"     "SetterName", eg"setName"
+ assign/atomic          默认即为assign和retain
+ */
++ (NSArray *)getPropertyNameList:(Class)theClass {
+    u_int count;
+    objc_property_t *properties = class_copyPropertyList(theClass, &count);
+    NSMutableArray *propertyNameArray = [NSMutableArray arrayWithCapacity:count];
+    
+    for (int i = 0; i < count ; i++) {
+        const char *propertyAttributes = property_getAttributes(properties[i]);
+        const char *propertyName = property_getName(properties[i]);
+        
+        [propertyNameArray addObject: [NSString stringWithFormat:@"attributes:(%s)",  propertyAttributes]];
+        [propertyNameArray addObject: [NSString stringWithFormat:@"name:[%s]", propertyName]];
+    }
+    free(properties);
+    NSLog(@"propertyNameArray=%@",propertyNameArray);
+    
+    return propertyNameArray;
 }
 
 #pragma mark - category中添加属性，借助associatedObject及静态变量；写法上比runtime系列方法简便

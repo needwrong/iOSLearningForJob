@@ -16,7 +16,7 @@
 @implementation NEString
 
 - (void)dealloc {
-    NSLog(@"asdf");
+    NSLog(@"%s", __FUNCTION__);
 }
 
 @end
@@ -24,7 +24,7 @@
 int main(int argc, char * argv[]) {
     @autoreleasepool {
         NEString __weak* str = [[NEString alloc] init];
-        str = @"asdf";
+        str = @"assigning to a pointer who's object has bean released";
         
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
