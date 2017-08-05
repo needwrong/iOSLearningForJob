@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		592B340E1F2786D500418385 /* NEMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 592B340D1F2786D500418385 /* NEMainTableViewController.m */; };
 		592B34111F29B8A900418385 /* NELogPrintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 592B34101F29B8A900418385 /* NELogPrintViewController.m */; };
-		592B34201F2DC9B100418385 /* LCILDEnlargedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 592B341F1F2DC9B100418385 /* LCILDEnlargedButton.m */; };
+		592B34201F2DC9B100418385 /* NEEnlargedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 592B341F1F2DC9B100418385 /* NEEnlargedButton.m */; };
 		592B34231F2DCC1A00418385 /* NEResponderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 592B34221F2DCC1A00418385 /* NEResponderViewController.m */; };
 		592B34261F2DF39A00418385 /* NESpecialResponseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 592B34251F2DF39A00418385 /* NESpecialResponseView.m */; };
 		592E6DB81F22EF4A007D8220 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 592E6DB71F22EF4A007D8220 /* main.m */; };
@@ -30,6 +30,8 @@
 		59ABFE8E1F23A4DB003544B1 /* DynamicLibTest.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 59ABFE781F23A4DB003544B1 /* DynamicLibTest.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		59ABFE961F23A502003544B1 /* StaticLibTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ABFE6D1F23A350003544B1 /* StaticLibTest.m */; };
 		59F6CF491F32D61C003226E3 /* NECategoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F6CF481F32D61C003226E3 /* NECategoryTest.m */; };
+		59F6CF521F35BCA6003226E3 /* NELineWrap.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F6CF4F1F35BCA6003226E3 /* NELineWrap.m */; };
+		59F6CF531F35BCA6003226E3 /* NETouchDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F6CF511F35BCA6003226E3 /* NETouchDrawView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,8 +101,8 @@
 		592B340D1F2786D500418385 /* NEMainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEMainTableViewController.m; sourceTree = "<group>"; };
 		592B340F1F29B8A900418385 /* NELogPrintViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NELogPrintViewController.h; sourceTree = "<group>"; };
 		592B34101F29B8A900418385 /* NELogPrintViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NELogPrintViewController.m; sourceTree = "<group>"; };
-		592B341E1F2DC9B100418385 /* LCILDEnlargedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCILDEnlargedButton.h; sourceTree = "<group>"; };
-		592B341F1F2DC9B100418385 /* LCILDEnlargedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCILDEnlargedButton.m; sourceTree = "<group>"; };
+		592B341E1F2DC9B100418385 /* NEEnlargedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEEnlargedButton.h; sourceTree = "<group>"; };
+		592B341F1F2DC9B100418385 /* NEEnlargedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEEnlargedButton.m; sourceTree = "<group>"; };
 		592B34211F2DCC1A00418385 /* NEResponderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEResponderViewController.h; sourceTree = "<group>"; };
 		592B34221F2DCC1A00418385 /* NEResponderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEResponderViewController.m; sourceTree = "<group>"; };
 		592B34241F2DF39A00418385 /* NESpecialResponseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NESpecialResponseView.h; sourceTree = "<group>"; };
@@ -134,6 +136,10 @@
 		59ABFE891F23A4DB003544B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59F6CF471F32D61C003226E3 /* NECategoryTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NECategoryTest.h; sourceTree = "<group>"; };
 		59F6CF481F32D61C003226E3 /* NECategoryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NECategoryTest.m; sourceTree = "<group>"; };
+		59F6CF4E1F35BCA6003226E3 /* NELineWrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NELineWrap.h; sourceTree = "<group>"; };
+		59F6CF4F1F35BCA6003226E3 /* NELineWrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NELineWrap.m; sourceTree = "<group>"; };
+		59F6CF501F35BCA6003226E3 /* NETouchDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NETouchDrawView.h; sourceTree = "<group>"; };
+		59F6CF511F35BCA6003226E3 /* NETouchDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NETouchDrawView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,8 +193,12 @@
 		592B341D1F2DC9A700418385 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				592B341E1F2DC9B100418385 /* LCILDEnlargedButton.h */,
-				592B341F1F2DC9B100418385 /* LCILDEnlargedButton.m */,
+				59F6CF4E1F35BCA6003226E3 /* NELineWrap.h */,
+				59F6CF4F1F35BCA6003226E3 /* NELineWrap.m */,
+				59F6CF501F35BCA6003226E3 /* NETouchDrawView.h */,
+				59F6CF511F35BCA6003226E3 /* NETouchDrawView.m */,
+				592B341E1F2DC9B100418385 /* NEEnlargedButton.h */,
+				592B341F1F2DC9B100418385 /* NEEnlargedButton.m */,
 				592B34241F2DF39A00418385 /* NESpecialResponseView.h */,
 				592B34251F2DF39A00418385 /* NESpecialResponseView.m */,
 			);
@@ -533,14 +543,16 @@
 			files = (
 				592E6DBE1F22EF4A007D8220 /* NEAnimationTestViewController.m in Sources */,
 				592E6DBB1F22EF4A007D8220 /* AppDelegate.m in Sources */,
+				59F6CF521F35BCA6003226E3 /* NELineWrap.m in Sources */,
 				59F6CF491F32D61C003226E3 /* NECategoryTest.m in Sources */,
 				592B34231F2DCC1A00418385 /* NEResponderViewController.m in Sources */,
 				592B34111F29B8A900418385 /* NELogPrintViewController.m in Sources */,
 				592E6DB81F22EF4A007D8220 /* main.m in Sources */,
-				592B34201F2DC9B100418385 /* LCILDEnlargedButton.m in Sources */,
+				592B34201F2DC9B100418385 /* NEEnlargedButton.m in Sources */,
 				592B34261F2DF39A00418385 /* NESpecialResponseView.m in Sources */,
 				592B340E1F2786D500418385 /* NEMainTableViewController.m in Sources */,
 				59A014931F2623A90001F826 /* NETableViewTestViewController.m in Sources */,
+				59F6CF531F35BCA6003226E3 /* NETouchDrawView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

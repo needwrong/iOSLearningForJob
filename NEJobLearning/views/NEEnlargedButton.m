@@ -1,14 +1,14 @@
 //
-//  LCILDEnlargedButton.m
-//  LECInteractionLiveDirector
+//  NEEnlargedButton.m
+//  NEJobLearning
 //
-//  Created by east on 2017/3/13.
-//  Copyright © 2017年 LeCloud. All rights reserved.
+//  Created by east on 2017/8/3.
+//  Copyright © 2017年 neareast. All rights reserved.
 //
 
-#import "LCILDEnlargedButton.h"
+#import "NEEnlargedButton.h"
 
-@implementation LCILDEnlargedButton
+@implementation NEEnlargedButton
 
 - (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent*)event {
     CGRect bounds = self.bounds;

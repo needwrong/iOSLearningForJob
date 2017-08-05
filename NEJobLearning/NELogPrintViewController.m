@@ -33,7 +33,6 @@ static __weak NELogPrintViewController *thisVC;
 - (void)viewDidLoad {
     [super viewDidLoad];
     thisVC = self;
-    [self.txtViewLogPrint addObserver:self forKeyPath:@"bounds" options:NSKeyValueObservingOptionNew context:nil];
     
     NSLog(@"-------------- global variables test -------------------\n");
 
@@ -77,11 +76,12 @@ static __weak NELogPrintViewController *thisVC;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    self.navigationController.navigationBarHidden = NO;
+    [self.txtViewLogPrint addObserver:self forKeyPath:@"bounds" options:NSKeyValueObservingOptionNew context:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
-    self.navigationController.navigationBarHidden = YES;
+    //8、 一定记得addObserver要对应在合适的位置removeObserver，否则程序可能崩溃
+    [self.txtViewLogPrint removeObserver:self forKeyPath:@"bounds"];
 }
 
 - (void)didReceiveMemoryWarning {
