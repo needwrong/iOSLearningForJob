@@ -77,11 +77,15 @@ static __weak NELogPrintViewController *thisVC;
 
 - (void)viewWillAppear:(BOOL)animated {
     [self.txtViewLogPrint addObserver:self forKeyPath:@"bounds" options:NSKeyValueObservingOptionNew context:nil];
+    
+    [super viewWillAppear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     //8、 一定记得addObserver要对应在合适的位置removeObserver，否则程序可能崩溃
     [self.txtViewLogPrint removeObserver:self forKeyPath:@"bounds"];
+    
+    [super viewWillDisappear:animated];
 }
 
 - (void)didReceiveMemoryWarning {

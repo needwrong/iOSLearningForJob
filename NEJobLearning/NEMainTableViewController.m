@@ -9,7 +9,8 @@
 #import "NEMainTableViewController.h"
 #import "NETableViewTestViewController.h"
 #import "NECategoryTest.h"
-
+#import <arpa/inet.h>
+#import <netdb.h>
 
 //1. 全局变量，可以在任意类中通过extern关键字访问修改
 NSString *globalStr  = @"globalStr";
@@ -42,14 +43,21 @@ static NSString *staticStr = @"staticStr";
 
 - (void)viewDidAppear:(BOOL)animated {
     [self globalStringTest];
+    
+    [super viewDidAppear:animated];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    socket(0,0,0);
     self.navigationController.navigationBarHidden = YES;
+    
+    [super viewWillAppear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     self.navigationController.navigationBarHidden = NO;
+    
+    [super viewWillDisappear:animated];
 }
 
 - (void)viewDidLoad {
