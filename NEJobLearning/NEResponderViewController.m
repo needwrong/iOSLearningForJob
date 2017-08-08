@@ -11,6 +11,7 @@
 
 @interface NEResponderViewController ()
 
+@property (weak, nonatomic) IBOutlet NESpecialResponseView *viewSpecialResponse;
 @property (weak, nonatomic) IBOutlet UIButton *btn;
 
 @end
@@ -21,8 +22,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
         
-    NESpecialResponseView *v = (NESpecialResponseView *)self.view;
-    v.specialView = self.btn;
+    self.viewSpecialResponse.specialView = self.btn;
 }
 
 - (void)didReceiveMemoryWarning {

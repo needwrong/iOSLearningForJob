@@ -212,43 +212,64 @@
                         <viewControllerLayoutGuide type="top" id="IOg-J8-ECM"/>
                         <viewControllerLayoutGuide type="bottom" id="8qR-Oe-eLU"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1BD-o7-JiG" customClass="NESpecialResponseView">
+                    <view key="view" contentMode="scaleToFill" id="1BD-o7-JiG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fZ7-tN-Ahl">
-                                <rect key="frame" x="0.0" y="204" width="275" height="56"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sy8-Ez-nRc" customClass="NESpecialResponseView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjZ-z8-5eZ" customClass="NEEnlargedButton">
-                                        <rect key="frame" x="263" y="15" width="25" height="26"/>
-                                        <color key="backgroundColor" red="1" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fZ7-tN-Ahl">
+                                        <rect key="frame" x="20" y="100" width="275" height="56"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjZ-z8-5eZ" customClass="NEEnlargedButton">
+                                                <rect key="frame" x="263" y="15" width="25" height="26"/>
+                                                <color key="backgroundColor" red="1" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="25" id="Da0-jA-kx9"/>
+                                                    <constraint firstAttribute="height" constant="26" id="RUk-V1-aej"/>
+                                                </constraints>
+                                                <state key="normal" image="flash"/>
+                                                <connections>
+                                                    <action selector="btnClicked:" destination="eMX-Dh-WPv" eventType="touchUpInside" id="iR9-8P-Dag"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="25" id="Da0-jA-kx9"/>
-                                            <constraint firstAttribute="height" constant="26" id="RUk-V1-aej"/>
+                                            <constraint firstAttribute="width" constant="275" id="8l5-bZ-Jng"/>
+                                            <constraint firstItem="zjZ-z8-5eZ" firstAttribute="centerY" secondItem="fZ7-tN-Ahl" secondAttribute="centerY" id="TKU-7x-h3h"/>
+                                            <constraint firstAttribute="height" constant="56" id="eGv-zb-Sid"/>
+                                            <constraint firstAttribute="trailing" secondItem="zjZ-z8-5eZ" secondAttribute="trailing" constant="-13" id="r9Z-bj-6lM"/>
                                         </constraints>
-                                        <state key="normal" image="flash"/>
-                                        <connections>
-                                            <action selector="btnClicked:" destination="eMX-Dh-WPv" eventType="touchUpInside" id="iR9-8P-Dag"/>
-                                        </connections>
-                                    </button>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="zjZ-z8-5eZ" firstAttribute="centerY" secondItem="fZ7-tN-Ahl" secondAttribute="centerY" id="TKU-7x-h3h"/>
-                                    <constraint firstAttribute="height" constant="56" id="eGv-zb-Sid"/>
-                                    <constraint firstAttribute="trailing" secondItem="zjZ-z8-5eZ" secondAttribute="trailing" constant="-13" id="r9Z-bj-6lM"/>
+                                    <constraint firstItem="fZ7-tN-Ahl" firstAttribute="top" secondItem="sy8-Ez-nRc" secondAttribute="top" constant="100" id="D1d-p2-yRk"/>
+                                    <constraint firstItem="fZ7-tN-Ahl" firstAttribute="leading" secondItem="sy8-Ez-nRc" secondAttribute="leading" constant="20" id="trQ-5g-auq"/>
                                 </constraints>
+                            </view>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="owc-bC-Rzd" customClass="NENoResponseView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.55770239093959728" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="fZ7-tN-Ahl" secondAttribute="trailing" constant="100" id="RRr-dQ-83H"/>
-                            <constraint firstItem="fZ7-tN-Ahl" firstAttribute="top" secondItem="IOg-J8-ECM" secondAttribute="bottom" constant="140" id="RXC-7u-yrC"/>
-                            <constraint firstItem="fZ7-tN-Ahl" firstAttribute="leading" secondItem="1BD-o7-JiG" secondAttribute="leading" id="eQw-x2-qhD"/>
+                            <constraint firstItem="8qR-Oe-eLU" firstAttribute="top" secondItem="owc-bC-Rzd" secondAttribute="bottom" id="0WQ-ix-z1e"/>
+                            <constraint firstAttribute="trailing" secondItem="owc-bC-Rzd" secondAttribute="trailing" id="NIu-vb-kpr"/>
+                            <constraint firstItem="8qR-Oe-eLU" firstAttribute="top" secondItem="sy8-Ez-nRc" secondAttribute="bottom" id="as7-Bs-Upx"/>
+                            <constraint firstItem="owc-bC-Rzd" firstAttribute="leading" secondItem="1BD-o7-JiG" secondAttribute="leading" id="brB-Bz-ogh"/>
+                            <constraint firstItem="owc-bC-Rzd" firstAttribute="top" secondItem="IOg-J8-ECM" secondAttribute="bottom" id="elj-1S-gkn"/>
+                            <constraint firstItem="sy8-Ez-nRc" firstAttribute="leading" secondItem="1BD-o7-JiG" secondAttribute="leading" id="fZj-1Z-8Fi"/>
+                            <constraint firstItem="sy8-Ez-nRc" firstAttribute="top" secondItem="IOg-J8-ECM" secondAttribute="bottom" id="waX-IF-BiJ"/>
+                            <constraint firstAttribute="trailing" secondItem="sy8-Ez-nRc" secondAttribute="trailing" id="xNM-yD-7he"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="btn" destination="zjZ-z8-5eZ" id="wbh-vi-QMS"/>
+                        <outlet property="viewSpecialResponse" destination="sy8-Ez-nRc" id="ZR6-6W-wVG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QsL-Xo-8gR" userLabel="First Responder" sceneMemberID="firstResponder"/>

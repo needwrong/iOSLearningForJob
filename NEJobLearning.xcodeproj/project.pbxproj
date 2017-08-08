@@ -32,6 +32,7 @@
 		59F6CF491F32D61C003226E3 /* NECategoryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F6CF481F32D61C003226E3 /* NECategoryTest.m */; };
 		59F6CF521F35BCA6003226E3 /* NELineWrap.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F6CF4F1F35BCA6003226E3 /* NELineWrap.m */; };
 		59F6CF531F35BCA6003226E3 /* NETouchDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F6CF511F35BCA6003226E3 /* NETouchDrawView.m */; };
+		59F6CF5C1F3A0FEE003226E3 /* NENoResponseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F6CF5B1F3A0FEE003226E3 /* NENoResponseView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +141,8 @@
 		59F6CF4F1F35BCA6003226E3 /* NELineWrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NELineWrap.m; sourceTree = "<group>"; };
 		59F6CF501F35BCA6003226E3 /* NETouchDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NETouchDrawView.h; sourceTree = "<group>"; };
 		59F6CF511F35BCA6003226E3 /* NETouchDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NETouchDrawView.m; sourceTree = "<group>"; };
+		59F6CF5A1F3A0FEE003226E3 /* NENoResponseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NENoResponseView.h; sourceTree = "<group>"; };
+		59F6CF5B1F3A0FEE003226E3 /* NENoResponseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NENoResponseView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +204,8 @@
 				592B341F1F2DC9B100418385 /* NEEnlargedButton.m */,
 				592B34241F2DF39A00418385 /* NESpecialResponseView.h */,
 				592B34251F2DF39A00418385 /* NESpecialResponseView.m */,
+				59F6CF5A1F3A0FEE003226E3 /* NENoResponseView.h */,
+				59F6CF5B1F3A0FEE003226E3 /* NENoResponseView.m */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -550,6 +555,7 @@
 				592E6DB81F22EF4A007D8220 /* main.m in Sources */,
 				592B34201F2DC9B100418385 /* NEEnlargedButton.m in Sources */,
 				592B34261F2DF39A00418385 /* NESpecialResponseView.m in Sources */,
+				59F6CF5C1F3A0FEE003226E3 /* NENoResponseView.m in Sources */,
 				592B340E1F2786D500418385 /* NEMainTableViewController.m in Sources */,
 				59A014931F2623A90001F826 /* NETableViewTestViewController.m in Sources */,
 				59F6CF531F35BCA6003226E3 /* NETouchDrawView.m in Sources */,

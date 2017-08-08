@@ -123,6 +123,7 @@ static NSString *staticStr = @"staticStr";
     NECategoryTest *categoryTest = [[NECategoryTest alloc] init];
     [categoryTest methodOverrideTest];
     [categoryTest methodOverrideWithParam:@"methodOverrideWithParam"];
+    
     [NECategoryTest callOriginMethodOfName:@"methodOverrideTest" onObject:categoryTest];
 }
 
@@ -136,6 +137,8 @@ static NSString *staticStr = @"staticStr";
     [categoryTest categoryPropertyTest:@"this is a new value"];
     
     [NECategoryTest getPropertyNameList:NECategoryTest.class];
+    
+    NSLog(@"call private method using kvc, got value: %@", [categoryTest valueForKey:@"getStrInCategory"]);
 }
 
 - (void)globalStringTest {
