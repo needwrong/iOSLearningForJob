@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02B0C5A71B9C6A9E7D741CCE /* libPods-DynamicLibTestTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 638A989AA6542E7B518C2B5C /* libPods-DynamicLibTestTests.a */; };
+		061319CA626B9B3C5C161483 /* libPods-NEJobLearningTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2003EB42AB4129EE242D2EC8 /* libPods-NEJobLearningTests.a */; };
+		1F1038435080BCDA591EA30F /* libPods-NEJobLearning.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F519C951F48B2A124DEC5F /* libPods-NEJobLearning.a */; };
+		3B68B4B5538F92DF58607237 /* libPods-NEJobLearningUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6303EEFF3407121D2EDD83A7 /* libPods-NEJobLearningUITests.a */; };
 		592B340E1F2786D500418385 /* NEMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 592B340D1F2786D500418385 /* NEMainTableViewController.m */; };
 		592B34111F29B8A900418385 /* NELogPrintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 592B34101F29B8A900418385 /* NELogPrintViewController.m */; };
 		592B34201F2DC9B100418385 /* NEEnlargedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 592B341F1F2DC9B100418385 /* NEEnlargedButton.m */; };
@@ -33,6 +37,9 @@
 		59F6CF521F35BCA6003226E3 /* NELineWrap.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F6CF4F1F35BCA6003226E3 /* NELineWrap.m */; };
 		59F6CF531F35BCA6003226E3 /* NETouchDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F6CF511F35BCA6003226E3 /* NETouchDrawView.m */; };
 		59F6CF5C1F3A0FEE003226E3 /* NENoResponseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F6CF5B1F3A0FEE003226E3 /* NENoResponseView.m */; };
+		59F6CF611F3B5D59003226E3 /* NEMultiThreadTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F6CF601F3B5D59003226E3 /* NEMultiThreadTestViewController.m */; };
+		6EE229B55C04012ABD608EEA /* libPods-StaticLibTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F41B8775DB290F592592FF43 /* libPods-StaticLibTest.a */; };
+		801FDF49FA3A51F314693740 /* libPods-DynamicLibTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91CDB7774BAB24975DC8A24B /* libPods-DynamicLibTest.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +105,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		075FF551C2743A8C844469C2 /* Pods-NEJobLearningUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NEJobLearningUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NEJobLearningUITests/Pods-NEJobLearningUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2003EB42AB4129EE242D2EC8 /* libPods-NEJobLearningTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NEJobLearningTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		500C62E16256E86D65BDD375 /* Pods-NEJobLearning.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NEJobLearning.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NEJobLearning/Pods-NEJobLearning.debug.xcconfig"; sourceTree = "<group>"; };
+		588C4748F940B0FEBBF28CD8 /* Pods-DynamicLibTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicLibTestTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DynamicLibTestTests/Pods-DynamicLibTestTests.release.xcconfig"; sourceTree = "<group>"; };
 		592B340C1F2786D500418385 /* NEMainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEMainTableViewController.h; sourceTree = "<group>"; };
 		592B340D1F2786D500418385 /* NEMainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEMainTableViewController.m; sourceTree = "<group>"; };
 		592B340F1F29B8A900418385 /* NELogPrintViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NELogPrintViewController.h; sourceTree = "<group>"; };
@@ -143,6 +154,22 @@
 		59F6CF511F35BCA6003226E3 /* NETouchDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NETouchDrawView.m; sourceTree = "<group>"; };
 		59F6CF5A1F3A0FEE003226E3 /* NENoResponseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NENoResponseView.h; sourceTree = "<group>"; };
 		59F6CF5B1F3A0FEE003226E3 /* NENoResponseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NENoResponseView.m; sourceTree = "<group>"; };
+		59F6CF5F1F3B5D59003226E3 /* NEMultiThreadTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEMultiThreadTestViewController.h; sourceTree = "<group>"; };
+		59F6CF601F3B5D59003226E3 /* NEMultiThreadTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEMultiThreadTestViewController.m; sourceTree = "<group>"; };
+		6303EEFF3407121D2EDD83A7 /* libPods-NEJobLearningUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NEJobLearningUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		638A989AA6542E7B518C2B5C /* libPods-DynamicLibTestTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DynamicLibTestTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B8CAAD4F891045D38EF66E9 /* Pods-DynamicLibTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicLibTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DynamicLibTest/Pods-DynamicLibTest.debug.xcconfig"; sourceTree = "<group>"; };
+		72832A2DEE7C2E2CE09DD40C /* Pods-NEJobLearningUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NEJobLearningUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NEJobLearningUITests/Pods-NEJobLearningUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		79F28E25EB119C0B08CE8086 /* Pods-DynamicLibTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicLibTestTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DynamicLibTestTests/Pods-DynamicLibTestTests.debug.xcconfig"; sourceTree = "<group>"; };
+		91CDB7774BAB24975DC8A24B /* libPods-DynamicLibTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DynamicLibTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A318FB7275C6976D19766E43 /* Pods-StaticLibTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StaticLibTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-StaticLibTest/Pods-StaticLibTest.release.xcconfig"; sourceTree = "<group>"; };
+		ADB00B6E4E5C39AD98EA680A /* Pods-NEJobLearningTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NEJobLearningTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NEJobLearningTests/Pods-NEJobLearningTests.release.xcconfig"; sourceTree = "<group>"; };
+		B4B56C27711825ACA768918D /* Pods-StaticLibTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StaticLibTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StaticLibTest/Pods-StaticLibTest.debug.xcconfig"; sourceTree = "<group>"; };
+		C959006CD77CD4A1E18EC61A /* Pods-DynamicLibTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicLibTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-DynamicLibTest/Pods-DynamicLibTest.release.xcconfig"; sourceTree = "<group>"; };
+		D7CEC29CC91E6FB0EE8D1A7B /* Pods-NEJobLearningTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NEJobLearningTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NEJobLearningTests/Pods-NEJobLearningTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DBCFACA8657B9560A095E340 /* Pods-NEJobLearning.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NEJobLearning.release.xcconfig"; path = "Pods/Target Support Files/Pods-NEJobLearning/Pods-NEJobLearning.release.xcconfig"; sourceTree = "<group>"; };
+		E7F519C951F48B2A124DEC5F /* libPods-NEJobLearning.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NEJobLearning.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F41B8775DB290F592592FF43 /* libPods-StaticLibTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StaticLibTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59ABFE8D1F23A4DB003544B1 /* DynamicLibTest.framework in Frameworks */,
+				1F1038435080BCDA591EA30F /* libPods-NEJobLearning.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +186,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				061319CA626B9B3C5C161483 /* libPods-NEJobLearningTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +194,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B68B4B5538F92DF58607237 /* libPods-NEJobLearningUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +202,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EE229B55C04012ABD608EEA /* libPods-StaticLibTest.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +210,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				801FDF49FA3A51F314693740 /* libPods-DynamicLibTest.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59ABFE811F23A4DB003544B1 /* DynamicLibTest.framework in Frameworks */,
+				02B0C5A71B9C6A9E7D741CCE /* libPods-DynamicLibTestTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +253,8 @@
 				59ABFE791F23A4DB003544B1 /* DynamicLibTest */,
 				59ABFE861F23A4DB003544B1 /* DynamicLibTestTests */,
 				592E6DB41F22EF4A007D8220 /* Products */,
+				64B074FEDB3A06DA9F220F57 /* Pods */,
+				7B3EB0B6E778F0F187782479 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -247,6 +282,8 @@
 				59A014921F2623A90001F826 /* NETableViewTestViewController.m */,
 				592B340F1F29B8A900418385 /* NELogPrintViewController.h */,
 				592B34101F29B8A900418385 /* NELogPrintViewController.m */,
+				59F6CF5F1F3B5D59003226E3 /* NEMultiThreadTestViewController.h */,
+				59F6CF601F3B5D59003226E3 /* NEMultiThreadTestViewController.m */,
 				592B34211F2DCC1A00418385 /* NEResponderViewController.h */,
 				592B34221F2DCC1A00418385 /* NEResponderViewController.m */,
 				59F6CF471F32D61C003226E3 /* NECategoryTest.h */,
@@ -316,6 +353,38 @@
 			path = DynamicLibTestTests;
 			sourceTree = "<group>";
 		};
+		64B074FEDB3A06DA9F220F57 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6B8CAAD4F891045D38EF66E9 /* Pods-DynamicLibTest.debug.xcconfig */,
+				C959006CD77CD4A1E18EC61A /* Pods-DynamicLibTest.release.xcconfig */,
+				79F28E25EB119C0B08CE8086 /* Pods-DynamicLibTestTests.debug.xcconfig */,
+				588C4748F940B0FEBBF28CD8 /* Pods-DynamicLibTestTests.release.xcconfig */,
+				500C62E16256E86D65BDD375 /* Pods-NEJobLearning.debug.xcconfig */,
+				DBCFACA8657B9560A095E340 /* Pods-NEJobLearning.release.xcconfig */,
+				D7CEC29CC91E6FB0EE8D1A7B /* Pods-NEJobLearningTests.debug.xcconfig */,
+				ADB00B6E4E5C39AD98EA680A /* Pods-NEJobLearningTests.release.xcconfig */,
+				72832A2DEE7C2E2CE09DD40C /* Pods-NEJobLearningUITests.debug.xcconfig */,
+				075FF551C2743A8C844469C2 /* Pods-NEJobLearningUITests.release.xcconfig */,
+				B4B56C27711825ACA768918D /* Pods-StaticLibTest.debug.xcconfig */,
+				A318FB7275C6976D19766E43 /* Pods-StaticLibTest.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7B3EB0B6E778F0F187782479 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				91CDB7774BAB24975DC8A24B /* libPods-DynamicLibTest.a */,
+				638A989AA6542E7B518C2B5C /* libPods-DynamicLibTestTests.a */,
+				E7F519C951F48B2A124DEC5F /* libPods-NEJobLearning.a */,
+				2003EB42AB4129EE242D2EC8 /* libPods-NEJobLearningTests.a */,
+				6303EEFF3407121D2EDD83A7 /* libPods-NEJobLearningUITests.a */,
+				F41B8775DB290F592592FF43 /* libPods-StaticLibTest.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -334,10 +403,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 592E6DE01F22EF4A007D8220 /* Build configuration list for PBXNativeTarget "NEJobLearning" */;
 			buildPhases = (
+				8042E0BCC0A6479DC09F87F7 /* [CP] Check Pods Manifest.lock */,
 				592E6DAF1F22EF4A007D8220 /* Sources */,
 				592E6DB01F22EF4A007D8220 /* Frameworks */,
 				592E6DB11F22EF4A007D8220 /* Resources */,
 				59ABFE921F23A4DB003544B1 /* Embed Frameworks */,
+				44A0077235A244A4A881F83A /* [CP] Embed Pods Frameworks */,
+				FB9A5C8187FD7DF3DBA13DB9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -353,9 +425,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 592E6DE31F22EF4A007D8220 /* Build configuration list for PBXNativeTarget "NEJobLearningTests" */;
 			buildPhases = (
+				F3D8788670C08F1330D8FB21 /* [CP] Check Pods Manifest.lock */,
 				592E6DC81F22EF4A007D8220 /* Sources */,
 				592E6DC91F22EF4A007D8220 /* Frameworks */,
 				592E6DCA1F22EF4A007D8220 /* Resources */,
+				65E8D33D8D1EE4CF79C08462 /* [CP] Embed Pods Frameworks */,
+				D209AD5E86996F7E8FBDE84C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -371,9 +446,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 592E6DE61F22EF4A007D8220 /* Build configuration list for PBXNativeTarget "NEJobLearningUITests" */;
 			buildPhases = (
+				A77A0AF357A5296FDD807C43 /* [CP] Check Pods Manifest.lock */,
 				592E6DD31F22EF4A007D8220 /* Sources */,
 				592E6DD41F22EF4A007D8220 /* Frameworks */,
 				592E6DD51F22EF4A007D8220 /* Resources */,
+				EE3D24965798EB4B09A00D8F /* [CP] Embed Pods Frameworks */,
+				4606C2E557BBFB9D2A46926E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -389,9 +467,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 59ABFE721F23A350003544B1 /* Build configuration list for PBXNativeTarget "StaticLibTest" */;
 			buildPhases = (
+				2363A608FECA08E8602C996A /* [CP] Check Pods Manifest.lock */,
 				59ABFE661F23A34F003544B1 /* Sources */,
 				59ABFE671F23A34F003544B1 /* Frameworks */,
 				59ABFE681F23A34F003544B1 /* CopyFiles */,
+				B337F84825F55BA8D0832699 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -406,10 +486,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 59ABFE8F1F23A4DB003544B1 /* Build configuration list for PBXNativeTarget "DynamicLibTest" */;
 			buildPhases = (
+				5FD1E9A1A01063C92DAC80A0 /* [CP] Check Pods Manifest.lock */,
 				59ABFE731F23A4DB003544B1 /* Sources */,
 				59ABFE741F23A4DB003544B1 /* Frameworks */,
 				59ABFE751F23A4DB003544B1 /* Headers */,
 				59ABFE761F23A4DB003544B1 /* Resources */,
+				232C7CD697D19C276245D893 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -424,9 +506,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 59ABFE931F23A4DB003544B1 /* Build configuration list for PBXNativeTarget "DynamicLibTestTests" */;
 			buildPhases = (
+				88FBAF50708D1D9C1DFECED7 /* [CP] Check Pods Manifest.lock */,
 				59ABFE7C1F23A4DB003544B1 /* Sources */,
 				59ABFE7D1F23A4DB003544B1 /* Frameworks */,
 				59ABFE7E1F23A4DB003544B1 /* Resources */,
+				94848B71F289723842891295 /* [CP] Embed Pods Frameworks */,
+				96192F96E66776BCAEDA05B5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -541,6 +626,249 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		232C7CD697D19C276245D893 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DynamicLibTest/Pods-DynamicLibTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2363A608FECA08E8602C996A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		44A0077235A244A4A881F83A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NEJobLearning/Pods-NEJobLearning-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4606C2E557BBFB9D2A46926E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NEJobLearningUITests/Pods-NEJobLearningUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5FD1E9A1A01063C92DAC80A0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		65E8D33D8D1EE4CF79C08462 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NEJobLearningTests/Pods-NEJobLearningTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8042E0BCC0A6479DC09F87F7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		88FBAF50708D1D9C1DFECED7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		94848B71F289723842891295 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DynamicLibTestTests/Pods-DynamicLibTestTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		96192F96E66776BCAEDA05B5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DynamicLibTestTests/Pods-DynamicLibTestTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A77A0AF357A5296FDD807C43 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B337F84825F55BA8D0832699 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StaticLibTest/Pods-StaticLibTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D209AD5E86996F7E8FBDE84C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NEJobLearningTests/Pods-NEJobLearningTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE3D24965798EB4B09A00D8F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NEJobLearningUITests/Pods-NEJobLearningUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3D8788670C08F1330D8FB21 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FB9A5C8187FD7DF3DBA13DB9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NEJobLearning/Pods-NEJobLearning-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		592E6DAF1F22EF4A007D8220 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -559,6 +887,7 @@
 				592B340E1F2786D500418385 /* NEMainTableViewController.m in Sources */,
 				59A014931F2623A90001F826 /* NETableViewTestViewController.m in Sources */,
 				59F6CF531F35BCA6003226E3 /* NETouchDrawView.m in Sources */,
+				59F6CF611F3B5D59003226E3 /* NEMultiThreadTestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -744,6 +1073,7 @@
 		};
 		592E6DE11F22EF4A007D8220 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 500C62E16256E86D65BDD375 /* Pods-NEJobLearning.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NEJobLearning/Info.plist;
@@ -756,6 +1086,7 @@
 		};
 		592E6DE21F22EF4A007D8220 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBCFACA8657B9560A095E340 /* Pods-NEJobLearning.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = NEJobLearning/Info.plist;
@@ -768,6 +1099,7 @@
 		};
 		592E6DE41F22EF4A007D8220 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7CEC29CC91E6FB0EE8D1A7B /* Pods-NEJobLearningTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = NEJobLearningTests/Info.plist;
@@ -780,6 +1112,7 @@
 		};
 		592E6DE51F22EF4A007D8220 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADB00B6E4E5C39AD98EA680A /* Pods-NEJobLearningTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = NEJobLearningTests/Info.plist;
@@ -792,6 +1125,7 @@
 		};
 		592E6DE71F22EF4A007D8220 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72832A2DEE7C2E2CE09DD40C /* Pods-NEJobLearningUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = NEJobLearningUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -803,6 +1137,7 @@
 		};
 		592E6DE81F22EF4A007D8220 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 075FF551C2743A8C844469C2 /* Pods-NEJobLearningUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = NEJobLearningUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -814,6 +1149,7 @@
 		};
 		59ABFE701F23A350003544B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4B56C27711825ACA768918D /* Pods-StaticLibTest.debug.xcconfig */;
 			buildSettings = {
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				LD_GENERATE_MAP_FILE = NO;
@@ -825,6 +1161,7 @@
 		};
 		59ABFE711F23A350003544B1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A318FB7275C6976D19766E43 /* Pods-StaticLibTest.release.xcconfig */;
 			buildSettings = {
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				LD_GENERATE_MAP_FILE = NO;
@@ -836,6 +1173,7 @@
 		};
 		59ABFE901F23A4DB003544B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B8CAAD4F891045D38EF66E9 /* Pods-DynamicLibTest.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
@@ -858,6 +1196,7 @@
 		};
 		59ABFE911F23A4DB003544B1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C959006CD77CD4A1E18EC61A /* Pods-DynamicLibTest.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
@@ -880,6 +1219,7 @@
 		};
 		59ABFE941F23A4DB003544B1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79F28E25EB119C0B08CE8086 /* Pods-DynamicLibTestTests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = DynamicLibTestTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -891,6 +1231,7 @@
 		};
 		59ABFE951F23A4DB003544B1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 588C4748F940B0FEBBF28CD8 /* Pods-DynamicLibTestTests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = DynamicLibTestTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
