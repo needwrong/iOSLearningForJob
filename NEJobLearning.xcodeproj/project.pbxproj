@@ -38,6 +38,7 @@
 		59F6CF531F35BCA6003226E3 /* NETouchDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F6CF511F35BCA6003226E3 /* NETouchDrawView.m */; };
 		59F6CF5C1F3A0FEE003226E3 /* NENoResponseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F6CF5B1F3A0FEE003226E3 /* NENoResponseView.m */; };
 		59F6CF611F3B5D59003226E3 /* NEMultiThreadTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F6CF601F3B5D59003226E3 /* NEMultiThreadTestViewController.m */; };
+		59F6CF641F3EE69C003226E3 /* NEClangTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F6CF631F3EE69C003226E3 /* NEClangTest.m */; };
 		6EE229B55C04012ABD608EEA /* libPods-StaticLibTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F41B8775DB290F592592FF43 /* libPods-StaticLibTest.a */; };
 		801FDF49FA3A51F314693740 /* libPods-DynamicLibTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91CDB7774BAB24975DC8A24B /* libPods-DynamicLibTest.a */; };
 /* End PBXBuildFile section */
@@ -156,6 +157,8 @@
 		59F6CF5B1F3A0FEE003226E3 /* NENoResponseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NENoResponseView.m; sourceTree = "<group>"; };
 		59F6CF5F1F3B5D59003226E3 /* NEMultiThreadTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEMultiThreadTestViewController.h; sourceTree = "<group>"; };
 		59F6CF601F3B5D59003226E3 /* NEMultiThreadTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEMultiThreadTestViewController.m; sourceTree = "<group>"; };
+		59F6CF621F3EE69C003226E3 /* NEClangTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEClangTest.h; sourceTree = "<group>"; };
+		59F6CF631F3EE69C003226E3 /* NEClangTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEClangTest.m; sourceTree = "<group>"; };
 		6303EEFF3407121D2EDD83A7 /* libPods-NEJobLearningUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NEJobLearningUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		638A989AA6542E7B518C2B5C /* libPods-DynamicLibTestTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DynamicLibTestTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B8CAAD4F891045D38EF66E9 /* Pods-DynamicLibTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicLibTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DynamicLibTest/Pods-DynamicLibTest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -304,6 +307,8 @@
 				592E6DB91F22EF4A007D8220 /* AppDelegate.h */,
 				592E6DBA1F22EF4A007D8220 /* AppDelegate.m */,
 				592E6DB71F22EF4A007D8220 /* main.m */,
+				59F6CF621F3EE69C003226E3 /* NEClangTest.h */,
+				59F6CF631F3EE69C003226E3 /* NEClangTest.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -888,6 +893,7 @@
 				59A014931F2623A90001F826 /* NETableViewTestViewController.m in Sources */,
 				59F6CF531F35BCA6003226E3 /* NETouchDrawView.m in Sources */,
 				59F6CF611F3B5D59003226E3 /* NEMultiThreadTestViewController.m in Sources */,
+				59F6CF641F3EE69C003226E3 /* NEClangTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1076,6 +1082,7 @@
 			baseConfigurationReference = 500C62E16256E86D65BDD375 /* Pods-NEJobLearning.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				INFOPLIST_FILE = NEJobLearning/Info.plist;
 				LD_GENERATE_MAP_FILE = NO;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1089,6 +1096,7 @@
 			baseConfigurationReference = DBCFACA8657B9560A095E340 /* Pods-NEJobLearning.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				INFOPLIST_FILE = NEJobLearning/Info.plist;
 				LD_GENERATE_MAP_FILE = NO;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
