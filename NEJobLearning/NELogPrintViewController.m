@@ -145,6 +145,9 @@ static __weak NELogPrintViewController *thisVC;
     
     //MRC下崩溃：error: returning block that lives on the local stack.
     blockClosureTest();
+    
+    
+    
 }
 
 - (void)blockMemoryTest {
@@ -153,6 +156,8 @@ static __weak NELogPrintViewController *thisVC;
     [self setMBlock:^{
         [weakSelf logPrintString:[NSString stringWithFormat:@"int in block%d",n]];;
     }];
+    //n已赋值到block结构体中，后面的赋值不影响
+    n = 100;
     NSLog(@"test--%@\n",self.mBlock);
 }
 

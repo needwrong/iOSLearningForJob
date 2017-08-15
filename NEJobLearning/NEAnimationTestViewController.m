@@ -8,7 +8,17 @@
 
 #import "NEAnimationTestViewController.h"
 
+#ifdef DEBUG
+#define NSLog(FORMAT, ...) fprintf(stderr,"%s\n",[[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#else
+#define NSLog(...)
+#endif
+
+
 @interface NEAnimationTestViewController ()
+
+@property (nonatomic, strong) UIView *animView;
+@property (nonatomic, strong) CADisplayLink *displayLink;
 
 @end
 
@@ -18,17 +28,39 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
+    //借用CADisplayLink观察属性值的实时变化
+    self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(watchViewAction)];
+    [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    
+    
 //    [self animationTestBasic];
-    [self animationTestSpringGroupDynamic];
-//    [self UIDynamicTest];
+//    [self animationTestSpringGroupDynamic];
+    [self UIDynamicTest];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self stopWatchView];
+    });
+}
+
+- (void)watchViewAction {
+    CALayer *presentationLayer = self.animView.layer.presentationLayer;
+    CALayer *modelLayer = self.animView.layer.modelLayer;
+    NSLog(@"%@&&%@", NSStringFromCGPoint(modelLayer.position), NSStringFromCGPoint(presentationLayer.position));
+}
+
+- (void)stopWatchView {
+    [self.displayLink invalidate];
+    self.displayLink = nil;
+    [self watchViewAction];
 }
 
 - (void)animationTestBasic {
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(50, 50, 200, 200)];
-    view.backgroundColor = [UIColor lightGrayColor];
-    [self.view addSubview:view];
-    
-    NSLog(@"view: %@\nbounds: %@", NSStringFromCGRect(view.frame), NSStringFromCGRect(view.bounds));
+    NSAssert(!_animView, @"请一次进行一组试验");
+
+    _animView = [[UIView alloc] initWithFrame:CGRectMake(50, 50, 200, 200)];
+    _animView.backgroundColor = [UIColor lightGrayColor];
+    [self.view addSubview:_animView];
+    NSLog(@"view: %@\nbounds: %@", NSStringFromCGRect(_animView.frame), NSStringFromCGRect(_animView.bounds));
     
     //1.CGAffineTransformMake***/CGAffineTransform***
     //    view.transform = CGAffineTransformMakeRotation(M_PI_4);
@@ -55,20 +87,20 @@
     positionAnim.duration = 3;
     //4.1 设置fromValue很关键，否则下面设置layer的值之后，动画没了效果
     //如果已经有别的动画正在执行，我们需要从呈现图层那里去获得fromValue
-    positionAnim.fromValue = [NSValue valueWithCGPoint:view.layer.position];
+    positionAnim.fromValue = [NSValue valueWithCGPoint:_animView.layer.position];
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
     positionAnim.toValue = [NSValue valueWithCGPoint:CGPointMake(screenSize.width / 2, screenSize.height / 2)];
-    [view.layer addAnimation:positionAnim forKey:@"move"];
+    [_animView.layer addAnimation:positionAnim forKey:@"move"];
     
     //4.2 设置动画结束时layer的状态
     //4.3 如果这里的图层并不是UIView关联的图层，我们需要用CATransaction来禁用隐式动画行为，否则默认的图层行为会干扰我们的显式动画（实际上，显式动画通常会覆盖隐式动画，但为了安全最好这么做）。
 //    [CATransaction begin];
 //    [CATransaction setDisableActions:YES];
-    [view.layer setValue:positionAnim.toValue forKey:positionAnim.keyPath];
+    [_animView.layer setValue:positionAnim.toValue forKey:positionAnim.keyPath];
 //    [CATransaction commit];
     
     //5. 旋转之后，view的Frame与bounds的宽高可能不同
-    NSLog(@"view: %@\nbounds: %@", NSStringFromCGRect(view.frame), NSStringFromCGRect(view.bounds));
+    NSLog(@"view: %@\nbounds: %@", NSStringFromCGRect(_animView.frame), NSStringFromCGRect(_animView.bounds));
     
     
     //6. 一个动画未结束，开启另一个动画
@@ -80,32 +112,34 @@
     transformAnim.fillMode = kCAFillModeBackwards;
     
     //设置fromValue很关键，否则下面设置layer的值之后，动画没了效果
-    transformAnim.fromValue = [NSValue valueWithCATransform3D:view.layer.transform];
+    transformAnim.fromValue = [NSValue valueWithCATransform3D:_animView.layer.transform];
     transformAnim.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeRotation(M_PI_4, 0, 0, 1)];
-    [view.layer addAnimation:transformAnim forKey:@"rotation"];
+    [_animView.layer addAnimation:transformAnim forKey:@"rotation"];
     
     //此动画延后开启，可以延时更改model layer状态而不设置fillMode
     //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 //    [CATransaction begin];
 //    [CATransaction setDisableActions:YES];
-    [view.layer setValue:transformAnim.toValue forKey:transformAnim.keyPath];
+    [_animView.layer setValue:transformAnim.toValue forKey:transformAnim.keyPath];
 //    [CATransaction commit];
     //    });
     
-    NSLog(@"view: %@\nbounds: %@", NSStringFromCGRect(view.frame), NSStringFromCGRect(view.bounds));
+    NSLog(@"view: %@\nbounds: %@", NSStringFromCGRect(_animView.frame), NSStringFromCGRect(_animView.bounds));
 }
 
 - (void)animationTestSpringGroupDynamic {
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(50, 50, 150, 150)];
-    view.backgroundColor = [UIColor redColor];
-    [self.view addSubview:view];
+    NSAssert(!_animView, @"请一次进行一组试验");
+    
+    _animView = [[UIView alloc] initWithFrame:CGRectMake(50, 50, 150, 150)];
+    _animView.backgroundColor = [UIColor redColor];
+    [self.view addSubview:_animView];
 
 //    //7.spring动画 更适合用于位移动画  http://www.jianshu.com/p/90a7a1787d1b
     CASpringAnimation *springAmin = [CASpringAnimation animationWithKeyPath:@"position"];
 //    springAmin.beginTime = CACurrentMediaTime() + 1;
 //    springAmin.fromValue = [NSValue valueWithCATransform3D:CATransform3DMakeScale(.7, .7, 1)];
     springAmin.toValue = [NSValue valueWithCGPoint:CGPointMake(300, 400)];
-    [view.layer addAnimation:springAmin forKey:@"move"];
+    [_animView.layer addAnimation:springAmin forKey:@"move"];
     NSLog(@"%f", springAmin.duration);
     
     //使用UIView动画无需操心动画状态与modelview不一致
@@ -119,16 +153,16 @@
     //8.keyframe动画  transitionWithView等更多UIView动画：http://www.jianshu.com/p/5abc038e4d94
     [UIView animateKeyframesWithDuration:9.0 delay:0.f options:UIViewKeyframeAnimationOptionCalculationModeLinear | UIViewAnimationOptionRepeat animations:^{
         [UIView addKeyframeWithRelativeStartTime:0.f relativeDuration:1.0 / 4 animations:^{
-            view.backgroundColor = [UIColor colorWithRed:0.9475 green:0.1921 blue:0.1746 alpha:1.0];
+            _animView.backgroundColor = [UIColor colorWithRed:0.9475 green:0.1921 blue:0.1746 alpha:1.0];
         }];
         [UIView addKeyframeWithRelativeStartTime:1.0 / 4 relativeDuration:1.0 / 4 animations:^{
-            view.backgroundColor = [UIColor colorWithRed:0.1064 green:0.6052 blue:0.0334 alpha:1.0];
+            _animView.backgroundColor = [UIColor colorWithRed:0.1064 green:0.6052 blue:0.0334 alpha:1.0];
         }];
         [UIView addKeyframeWithRelativeStartTime:2.0 / 4 relativeDuration:1.0 / 4 animations:^{
-            view.backgroundColor = [UIColor colorWithRed:0.1366 green:0.3017 blue:0.8411 alpha:1.0];
+            _animView.backgroundColor = [UIColor colorWithRed:0.1366 green:0.3017 blue:0.8411 alpha:1.0];
         }];
         [UIView addKeyframeWithRelativeStartTime:3.0 / 4 relativeDuration:1.0 / 4 animations:^{
-            view.backgroundColor = [UIColor colorWithRed:0.619 green:0.037 blue:0.6719 alpha:1.0];
+            _animView.backgroundColor = [UIColor colorWithRed:0.619 green:0.037 blue:0.6719 alpha:1.0];
         }];
     } completion:^(BOOL finished) {
         NSLog(@"keyframe动画结束，状态%@", finished ? @"finished" : @"unfinished");
@@ -136,7 +170,7 @@
     
     //9. 停止UIView动画
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        CALayer *pLayer = view.layer.presentationLayer;
+        CALayer *pLayer = _animView.layer.presentationLayer;
         
         //9.1、删除所有动画；暴力而效果不好
 //        [view.layer removeAllAnimations];
@@ -167,7 +201,7 @@
         [UIView beginAnimations:nil context:NULL];
         [UIView setAnimationBeginsFromCurrentState:YES];
         [UIView setAnimationDuration:0.001];
-        view.backgroundColor = [UIColor colorWithCGColor:pLayer.backgroundColor];
+        _animView.backgroundColor = [UIColor colorWithCGColor:pLayer.backgroundColor];
         [UIView commitAnimations];
         
     });
@@ -199,23 +233,25 @@
     animGroup.removedOnCompletion = NO;
     animGroup.fillMode = kCAFillModeForwards;
     
-    [view.layer addAnimation:animGroup forKey:@"group"];
+    [_animView.layer addAnimation:animGroup forKey:@"group"];
 }
 
 - (void)UIDynamicTest {
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 150, 150)];
-    view.backgroundColor = [UIColor blackColor];
-    [self.view addSubview:view];
+    NSAssert(!_animView, @"请一次进行一组试验");
+
+    _animView = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 150, 150)];
+    _animView.backgroundColor = [UIColor blackColor];
+    [self.view addSubview:_animView];
     
     // 1. 谁来仿真？UIDynamicAnimator来负责仿真
     static UIDynamicAnimator *animator;
     animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
     
     // 2. 仿真个什么动作？自由落体
-    UIGravityBehavior *gravity = [[UIGravityBehavior alloc] initWithItems:@[view]];
+    UIGravityBehavior *gravity = [[UIGravityBehavior alloc] initWithItems:@[_animView]];
     
     // 3. 碰撞检测
-    UICollisionBehavior *collision = [[UICollisionBehavior alloc] initWithItems:@[view]];
+    UICollisionBehavior *collision = [[UICollisionBehavior alloc] initWithItems:@[_animView]];
 //     设置不要出边界，碰到边界会被反弹
     collision.translatesReferenceBoundsIntoBoundary = YES;
     
@@ -227,6 +263,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc {
+    NSLog(@"%s", __FUNCTION__);
 }
 
 @end
