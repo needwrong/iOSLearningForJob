@@ -14,7 +14,13 @@
 #define NSLog(...)
 #endif
 
-@interface NECategoryTest : NSObject {
+
+@interface NETestBase : NSObject
+
+@end;
+
+
+@interface NECategoryTest : NETestBase {
     id privateProperty;
 }
 

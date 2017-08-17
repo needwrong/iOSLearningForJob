@@ -9,16 +9,31 @@
 #import "NECategoryTest.h"
 #import <objc/runtime.h>
 
+@interface NETestBase()
+@end
+
+@implementation NETestBase
+
++ (void)load {
+    NSLog(@"%s", __FUNCTION__);
+}
+
++ (void)initialize {
+    NSLog(@"%s", __FUNCTION__);
+}
+
+@end
+
 /******* Category Implementation *******/
 @implementation NECategoryTest(Category)
 //1. 类方法load方法和initialize
 // class或category添加到运行时的时候调用，可用于在类加载期间的一些操作（改变类方法）
-+ (void) load {
++ (void)load {
     NSLog(@"%s", __FUNCTION__);
 }
 
 //在类收到任意消息之前（包括init）进行一些初始化操作；此方法父类的调用先于子类
-+ (void) initialize {
++ (void)initialize {
     NSLog(@"%s", __FUNCTION__);
 }
 
@@ -51,6 +66,7 @@
 }
 
 + (void) initialize {
+    //最后一个类别的initialize触发基类的该方法[NETestBase initialize]
     NSLog(@"%s", __FUNCTION__);
 }
 
@@ -67,6 +83,8 @@
 
 #pragma mark - initialize and lifecycle
 + (void)load {
+    //5. [super load]会导致两次调用基类的load方法（[NETestBase load]）；并触发[NETestBase initialize]
+//    [super load];
     NSLog(@"%s", __FUNCTION__);
 }
 
