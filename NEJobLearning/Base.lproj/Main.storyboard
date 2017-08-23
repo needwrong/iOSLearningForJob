@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -339,36 +340,58 @@
                         <viewControllerLayoutGuide type="top" id="Q9e-fq-LCN"/>
                         <viewControllerLayoutGuide type="bottom" id="dRy-Ro-8Y7"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kxP-8S-kW8">
+                    <view key="view" contentMode="scaleToFill" id="D5X-Jw-euw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sf3-vI-Ip5">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wwe-Hm-M1o">
+                                <rect key="frame" x="16" y="70" width="343" height="200"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kQk-cs-QeP">
-                                        <rect key="frame" x="0.0" y="0.0" width="800" height="800"/>
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lPR-3B-cNE" userLabel="upView">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="180"/>
+                                        <color key="backgroundColor" red="1" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="800" id="8L0-Hb-QdL"/>
-                                            <constraint firstAttribute="width" constant="800" id="Apf-Gc-21K"/>
+                                            <constraint firstAttribute="height" constant="180" id="jkB-uQ-YHv"/>
                                         </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhZ-4D-qDm" userLabel="downView">
+                                        <rect key="frame" x="0.0" y="180" width="343" height="180"/>
+                                        <color key="backgroundColor" red="0.4549019608" green="0.62745098040000002" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="kQk-cs-QeP" secondAttribute="trailing" id="7zf-hw-Yvv"/>
-                                    <constraint firstAttribute="bottom" secondItem="kQk-cs-QeP" secondAttribute="bottom" id="Wwq-q6-jDy"/>
-                                    <constraint firstItem="kQk-cs-QeP" firstAttribute="leading" secondItem="Sf3-vI-Ip5" secondAttribute="leading" id="fkX-t5-uQQ"/>
-                                    <constraint firstItem="kQk-cs-QeP" firstAttribute="top" secondItem="Sf3-vI-Ip5" secondAttribute="top" id="znZ-Gf-DoO"/>
+                                    <constraint firstAttribute="bottom" secondItem="lhZ-4D-qDm" secondAttribute="bottom" constant="80" id="Apf-Ps-CbG"/>
+                                    <constraint firstItem="lhZ-4D-qDm" firstAttribute="leading" secondItem="Wwe-Hm-M1o" secondAttribute="leading" id="DpV-ne-2L3"/>
+                                    <constraint firstAttribute="height" constant="200" id="P7i-bO-4we"/>
+                                    <constraint firstAttribute="trailing" secondItem="lhZ-4D-qDm" secondAttribute="trailing" constant="70" id="R2Q-fb-VDS"/>
+                                    <constraint firstItem="lPR-3B-cNE" firstAttribute="top" secondItem="Wwe-Hm-M1o" secondAttribute="top" id="WZP-UJ-2Po"/>
+                                    <constraint firstItem="lPR-3B-cNE" firstAttribute="width" secondItem="Wwe-Hm-M1o" secondAttribute="width" id="cDJ-15-fGy"/>
+                                    <constraint firstItem="lhZ-4D-qDm" firstAttribute="height" secondItem="lPR-3B-cNE" secondAttribute="height" id="gnn-bd-lBh"/>
+                                    <constraint firstItem="lPR-3B-cNE" firstAttribute="bottom" secondItem="lhZ-4D-qDm" secondAttribute="top" id="pDm-xU-e7h"/>
+                                    <constraint firstItem="lPR-3B-cNE" firstAttribute="leading" secondItem="Wwe-Hm-M1o" secondAttribute="leading" id="q48-vi-WQt"/>
+                                    <constraint firstAttribute="trailing" secondItem="lPR-3B-cNE" secondAttribute="trailing" constant="70" id="yhS-iw-ago"/>
+                                    <constraint firstItem="lhZ-4D-qDm" firstAttribute="width" secondItem="Wwe-Hm-M1o" secondAttribute="width" id="zwv-aP-L3S"/>
                                 </constraints>
                             </scrollView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="phB-Lc-Rtj">
+                                <rect key="frame" x="37" y="320" width="300" height="150"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="SDn-o4-GgD"/>
+                                    <constraint firstAttribute="width" constant="300" id="bHR-qP-cNg"/>
+                                </constraints>
+                                <string key="text">ScrollView的subview布局约束需涵盖相对四个边（edge）的距离，此距离为最终contentView滑动到该edge一侧时edge相对于ScrollView的距离；如本例中的右边距70和下边距80。 除此之外subview需在约束上填满scrollview，则四个edge之间的部分即为contentView。</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="dRy-Ro-8Y7" firstAttribute="top" secondItem="Sf3-vI-Ip5" secondAttribute="bottom" id="LNZ-NT-D6S"/>
-                            <constraint firstAttribute="trailing" secondItem="Sf3-vI-Ip5" secondAttribute="trailing" id="Odv-mx-CRE"/>
-                            <constraint firstItem="Sf3-vI-Ip5" firstAttribute="leading" secondItem="kxP-8S-kW8" secondAttribute="leading" id="XEh-rj-bBA"/>
-                            <constraint firstItem="Sf3-vI-Ip5" firstAttribute="top" secondItem="Q9e-fq-LCN" secondAttribute="bottom" id="nft-GR-NAB"/>
+                            <constraint firstItem="phB-Lc-Rtj" firstAttribute="top" secondItem="Wwe-Hm-M1o" secondAttribute="bottom" constant="50" id="15O-CZ-fek"/>
+                            <constraint firstItem="phB-Lc-Rtj" firstAttribute="centerX" secondItem="D5X-Jw-euw" secondAttribute="centerX" id="BEJ-uJ-0Ze"/>
+                            <constraint firstItem="Wwe-Hm-M1o" firstAttribute="leading" secondItem="D5X-Jw-euw" secondAttribute="leadingMargin" id="CLJ-bl-GmN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Wwe-Hm-M1o" secondAttribute="trailing" id="aIc-1G-0La"/>
+                            <constraint firstItem="Wwe-Hm-M1o" firstAttribute="top" secondItem="Q9e-fq-LCN" secondAttribute="bottom" constant="6" id="wI9-yZ-GlE"/>
                         </constraints>
                     </view>
                 </viewController>
