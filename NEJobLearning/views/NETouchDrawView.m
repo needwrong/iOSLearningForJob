@@ -45,6 +45,13 @@
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    //可用于解决此View的父视图是UIScrollView时，绘图失败的情况；但不能解决更复杂的嵌套场景
+//    if ([self.superview isKindOfClass:[UIScrollView class]]) {
+//        UIScrollView *scrollView = (UIScrollView *)self.superview;
+//        scrollView.scrollEnabled = NO;
+//        //对应touchesEnded中应加入scrollEnabled = YES;
+//    }
+    
     [self.undoManager beginUndoGrouping];
     for (UITouch *t in touches) {
         // Create a line for the value

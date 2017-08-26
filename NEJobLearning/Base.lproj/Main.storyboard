@@ -335,7 +335,7 @@
         <!--ScrollviewInAutoreleaseTest-->
         <scene sceneID="mQV-P6-yMj">
             <objects>
-                <viewController title="ScrollviewInAutoreleaseTest" automaticallyAdjustsScrollViewInsets="NO" id="3tM-6f-cls" sceneMemberID="viewController">
+                <viewController title="ScrollviewInAutoreleaseTest" automaticallyAdjustsScrollViewInsets="NO" id="3tM-6f-cls" customClass="NEAutolayoutScrollViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Q9e-fq-LCN"/>
                         <viewControllerLayoutGuide type="bottom" id="dRy-Ro-8Y7"/>
@@ -344,37 +344,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wwe-Hm-M1o">
-                                <rect key="frame" x="16" y="70" width="343" height="200"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wwe-Hm-M1o" customClass="NEScrollView">
+                                <rect key="frame" x="16" y="70" width="343" height="400"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lPR-3B-cNE" userLabel="upView">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="180"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRf-x2-6uC">
+                                                <rect key="frame" x="104.5" y="75" width="133" height="30"/>
+                                                <state key="normal" title="ScrollView上的按钮"/>
+                                                <connections>
+                                                    <action selector="onBtnOnScrollViewClicked:" destination="3tM-6f-cls" eventType="touchUpInside" id="GtV-cw-O2M"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                         <color key="backgroundColor" red="1" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
+                                            <constraint firstItem="xRf-x2-6uC" firstAttribute="centerY" secondItem="lPR-3B-cNE" secondAttribute="centerY" id="Gm2-da-i2Y"/>
+                                            <constraint firstItem="xRf-x2-6uC" firstAttribute="centerX" secondItem="lPR-3B-cNE" secondAttribute="centerX" id="cWd-CB-gGA"/>
                                             <constraint firstAttribute="height" constant="180" id="jkB-uQ-YHv"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhZ-4D-qDm" userLabel="downView">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aUm-Jd-OrZ" userLabel="middleDrawView" customClass="NETouchDrawView">
                                         <rect key="frame" x="0.0" y="180" width="343" height="180"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhZ-4D-qDm" userLabel="downView">
+                                        <rect key="frame" x="0.0" y="360" width="343" height="180"/>
                                         <color key="backgroundColor" red="0.4549019608" green="0.62745098040000002" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="lhZ-4D-qDm" secondAttribute="bottom" constant="80" id="Apf-Ps-CbG"/>
                                     <constraint firstItem="lhZ-4D-qDm" firstAttribute="leading" secondItem="Wwe-Hm-M1o" secondAttribute="leading" id="DpV-ne-2L3"/>
-                                    <constraint firstAttribute="height" constant="200" id="P7i-bO-4we"/>
+                                    <constraint firstItem="lhZ-4D-qDm" firstAttribute="top" secondItem="aUm-Jd-OrZ" secondAttribute="bottom" id="FY3-Y9-nmA"/>
+                                    <constraint firstAttribute="height" constant="400" id="P7i-bO-4we"/>
                                     <constraint firstAttribute="trailing" secondItem="lhZ-4D-qDm" secondAttribute="trailing" constant="70" id="R2Q-fb-VDS"/>
+                                    <constraint firstItem="aUm-Jd-OrZ" firstAttribute="leading" secondItem="lPR-3B-cNE" secondAttribute="leading" id="S18-Ly-kHD"/>
+                                    <constraint firstItem="aUm-Jd-OrZ" firstAttribute="height" secondItem="lPR-3B-cNE" secondAttribute="height" id="Vtk-ta-xNA"/>
                                     <constraint firstItem="lPR-3B-cNE" firstAttribute="top" secondItem="Wwe-Hm-M1o" secondAttribute="top" id="WZP-UJ-2Po"/>
                                     <constraint firstItem="lPR-3B-cNE" firstAttribute="width" secondItem="Wwe-Hm-M1o" secondAttribute="width" id="cDJ-15-fGy"/>
                                     <constraint firstItem="lhZ-4D-qDm" firstAttribute="height" secondItem="lPR-3B-cNE" secondAttribute="height" id="gnn-bd-lBh"/>
-                                    <constraint firstItem="lPR-3B-cNE" firstAttribute="bottom" secondItem="lhZ-4D-qDm" secondAttribute="top" id="pDm-xU-e7h"/>
                                     <constraint firstItem="lPR-3B-cNE" firstAttribute="leading" secondItem="Wwe-Hm-M1o" secondAttribute="leading" id="q48-vi-WQt"/>
+                                    <constraint firstItem="aUm-Jd-OrZ" firstAttribute="top" secondItem="lPR-3B-cNE" secondAttribute="bottom" id="qKi-a0-D7X"/>
                                     <constraint firstAttribute="trailing" secondItem="lPR-3B-cNE" secondAttribute="trailing" constant="70" id="yhS-iw-ago"/>
+                                    <constraint firstItem="aUm-Jd-OrZ" firstAttribute="trailing" secondItem="lPR-3B-cNE" secondAttribute="trailing" id="yrc-pG-kI0"/>
                                     <constraint firstItem="lhZ-4D-qDm" firstAttribute="width" secondItem="Wwe-Hm-M1o" secondAttribute="width" id="zwv-aP-L3S"/>
                                 </constraints>
                             </scrollView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="phB-Lc-Rtj">
-                                <rect key="frame" x="37" y="320" width="300" height="150"/>
+                                <rect key="frame" x="37" y="505" width="300" height="150"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="SDn-o4-GgD"/>
@@ -387,13 +406,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="phB-Lc-Rtj" firstAttribute="top" secondItem="Wwe-Hm-M1o" secondAttribute="bottom" constant="50" id="15O-CZ-fek"/>
+                            <constraint firstItem="phB-Lc-Rtj" firstAttribute="top" secondItem="Wwe-Hm-M1o" secondAttribute="bottom" constant="35" id="15O-CZ-fek"/>
                             <constraint firstItem="phB-Lc-Rtj" firstAttribute="centerX" secondItem="D5X-Jw-euw" secondAttribute="centerX" id="BEJ-uJ-0Ze"/>
                             <constraint firstItem="Wwe-Hm-M1o" firstAttribute="leading" secondItem="D5X-Jw-euw" secondAttribute="leadingMargin" id="CLJ-bl-GmN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Wwe-Hm-M1o" secondAttribute="trailing" id="aIc-1G-0La"/>
                             <constraint firstItem="Wwe-Hm-M1o" firstAttribute="top" secondItem="Q9e-fq-LCN" secondAttribute="bottom" constant="6" id="wI9-yZ-GlE"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="scrollView" destination="Wwe-Hm-M1o" id="2T9-np-KIc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bqo-4k-N07" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

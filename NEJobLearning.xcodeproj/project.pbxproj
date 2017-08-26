@@ -11,20 +11,15 @@
 		061319CA626B9B3C5C161483 /* libPods-NEJobLearningTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2003EB42AB4129EE242D2EC8 /* libPods-NEJobLearningTests.a */; };
 		1F1038435080BCDA591EA30F /* libPods-NEJobLearning.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F519C951F48B2A124DEC5F /* libPods-NEJobLearning.a */; };
 		3B68B4B5538F92DF58607237 /* libPods-NEJobLearningUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6303EEFF3407121D2EDD83A7 /* libPods-NEJobLearningUITests.a */; };
-		592B340E1F2786D500418385 /* NEMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 592B340D1F2786D500418385 /* NEMainTableViewController.m */; };
-		592B34111F29B8A900418385 /* NELogPrintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 592B34101F29B8A900418385 /* NELogPrintViewController.m */; };
 		592B34201F2DC9B100418385 /* NEEnlargedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 592B341F1F2DC9B100418385 /* NEEnlargedButton.m */; };
-		592B34231F2DCC1A00418385 /* NEResponderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 592B34221F2DCC1A00418385 /* NEResponderViewController.m */; };
 		592B34261F2DF39A00418385 /* NESpecialResponseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 592B34251F2DF39A00418385 /* NESpecialResponseView.m */; };
 		592E6DB81F22EF4A007D8220 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 592E6DB71F22EF4A007D8220 /* main.m */; };
 		592E6DBB1F22EF4A007D8220 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 592E6DBA1F22EF4A007D8220 /* AppDelegate.m */; };
-		592E6DBE1F22EF4A007D8220 /* NEAnimationTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 592E6DBD1F22EF4A007D8220 /* NEAnimationTestViewController.m */; };
 		592E6DC11F22EF4A007D8220 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 592E6DBF1F22EF4A007D8220 /* Main.storyboard */; };
 		592E6DC31F22EF4A007D8220 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 592E6DC21F22EF4A007D8220 /* Assets.xcassets */; };
 		592E6DC61F22EF4A007D8220 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 592E6DC41F22EF4A007D8220 /* LaunchScreen.storyboard */; };
 		592E6DD11F22EF4A007D8220 /* NEJobLearningTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 592E6DD01F22EF4A007D8220 /* NEJobLearningTests.m */; };
 		592E6DDC1F22EF4A007D8220 /* NEJobLearningUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 592E6DDB1F22EF4A007D8220 /* NEJobLearningUITests.m */; };
-		59A014931F2623A90001F826 /* NETableViewTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59A014921F2623A90001F826 /* NETableViewTestViewController.m */; };
 		59ABFE6E1F23A350003544B1 /* StaticLibTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 59ABFE6D1F23A350003544B1 /* StaticLibTest.m */; };
 		59ABFE6F1F23A350003544B1 /* StaticLibTest.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 59ABFE6C1F23A350003544B1 /* StaticLibTest.h */; };
 		59ABFE811F23A4DB003544B1 /* DynamicLibTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59ABFE781F23A4DB003544B1 /* DynamicLibTest.framework */; };
@@ -37,8 +32,14 @@
 		59F6CF521F35BCA6003226E3 /* NELineWrap.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F6CF4F1F35BCA6003226E3 /* NELineWrap.m */; };
 		59F6CF531F35BCA6003226E3 /* NETouchDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F6CF511F35BCA6003226E3 /* NETouchDrawView.m */; };
 		59F6CF5C1F3A0FEE003226E3 /* NENoResponseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F6CF5B1F3A0FEE003226E3 /* NENoResponseView.m */; };
-		59F6CF611F3B5D59003226E3 /* NEMultiThreadTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F6CF601F3B5D59003226E3 /* NEMultiThreadTestViewController.m */; };
 		59F6CF641F3EE69C003226E3 /* NEClangTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F6CF631F3EE69C003226E3 /* NEClangTest.m */; };
+		59F6CF821F518077003226E3 /* NEAnimationTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F6CF751F518077003226E3 /* NEAnimationTestViewController.m */; };
+		59F6CF831F518077003226E3 /* NEAutolayoutScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F6CF771F518077003226E3 /* NEAutolayoutScrollViewController.m */; };
+		59F6CF841F518077003226E3 /* NELogPrintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F6CF791F518077003226E3 /* NELogPrintViewController.m */; };
+		59F6CF851F518077003226E3 /* NEMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F6CF7B1F518077003226E3 /* NEMainTableViewController.m */; };
+		59F6CF861F518077003226E3 /* NEMultiThreadTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F6CF7D1F518077003226E3 /* NEMultiThreadTestViewController.m */; };
+		59F6CF871F518077003226E3 /* NEResponderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F6CF7F1F518077003226E3 /* NEResponderViewController.m */; };
+		59F6CF881F518077003226E3 /* NETableViewTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F6CF811F518077003226E3 /* NETableViewTestViewController.m */; };
 		6EE229B55C04012ABD608EEA /* libPods-StaticLibTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F41B8775DB290F592592FF43 /* libPods-StaticLibTest.a */; };
 		801FDF49FA3A51F314693740 /* libPods-DynamicLibTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91CDB7774BAB24975DC8A24B /* libPods-DynamicLibTest.a */; };
 /* End PBXBuildFile section */
@@ -110,22 +111,14 @@
 		2003EB42AB4129EE242D2EC8 /* libPods-NEJobLearningTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NEJobLearningTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		500C62E16256E86D65BDD375 /* Pods-NEJobLearning.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NEJobLearning.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NEJobLearning/Pods-NEJobLearning.debug.xcconfig"; sourceTree = "<group>"; };
 		588C4748F940B0FEBBF28CD8 /* Pods-DynamicLibTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicLibTestTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DynamicLibTestTests/Pods-DynamicLibTestTests.release.xcconfig"; sourceTree = "<group>"; };
-		592B340C1F2786D500418385 /* NEMainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEMainTableViewController.h; sourceTree = "<group>"; };
-		592B340D1F2786D500418385 /* NEMainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEMainTableViewController.m; sourceTree = "<group>"; };
-		592B340F1F29B8A900418385 /* NELogPrintViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NELogPrintViewController.h; sourceTree = "<group>"; };
-		592B34101F29B8A900418385 /* NELogPrintViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NELogPrintViewController.m; sourceTree = "<group>"; };
 		592B341E1F2DC9B100418385 /* NEEnlargedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEEnlargedButton.h; sourceTree = "<group>"; };
 		592B341F1F2DC9B100418385 /* NEEnlargedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEEnlargedButton.m; sourceTree = "<group>"; };
-		592B34211F2DCC1A00418385 /* NEResponderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEResponderViewController.h; sourceTree = "<group>"; };
-		592B34221F2DCC1A00418385 /* NEResponderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEResponderViewController.m; sourceTree = "<group>"; };
 		592B34241F2DF39A00418385 /* NESpecialResponseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NESpecialResponseView.h; sourceTree = "<group>"; };
 		592B34251F2DF39A00418385 /* NESpecialResponseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NESpecialResponseView.m; sourceTree = "<group>"; };
 		592E6DB31F22EF4A007D8220 /* NEJobLearning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NEJobLearning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		592E6DB71F22EF4A007D8220 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		592E6DB91F22EF4A007D8220 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		592E6DBA1F22EF4A007D8220 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		592E6DBC1F22EF4A007D8220 /* NEAnimationTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NEAnimationTestViewController.h; sourceTree = "<group>"; };
-		592E6DBD1F22EF4A007D8220 /* NEAnimationTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NEAnimationTestViewController.m; sourceTree = "<group>"; };
 		592E6DC01F22EF4A007D8220 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		592E6DC21F22EF4A007D8220 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		592E6DC51F22EF4A007D8220 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -136,8 +129,6 @@
 		592E6DD71F22EF4A007D8220 /* NEJobLearningUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NEJobLearningUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		592E6DDB1F22EF4A007D8220 /* NEJobLearningUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NEJobLearningUITests.m; sourceTree = "<group>"; };
 		592E6DDD1F22EF4A007D8220 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		59A014911F2623A90001F826 /* NETableViewTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NETableViewTestViewController.h; sourceTree = "<group>"; };
-		59A014921F2623A90001F826 /* NETableViewTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NETableViewTestViewController.m; sourceTree = "<group>"; };
 		59ABFE6A1F23A34F003544B1 /* libStaticLibTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libStaticLibTest.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		59ABFE6C1F23A350003544B1 /* StaticLibTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StaticLibTest.h; sourceTree = "<group>"; };
 		59ABFE6D1F23A350003544B1 /* StaticLibTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StaticLibTest.m; sourceTree = "<group>"; };
@@ -155,10 +146,22 @@
 		59F6CF511F35BCA6003226E3 /* NETouchDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NETouchDrawView.m; sourceTree = "<group>"; };
 		59F6CF5A1F3A0FEE003226E3 /* NENoResponseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NENoResponseView.h; sourceTree = "<group>"; };
 		59F6CF5B1F3A0FEE003226E3 /* NENoResponseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NENoResponseView.m; sourceTree = "<group>"; };
-		59F6CF5F1F3B5D59003226E3 /* NEMultiThreadTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEMultiThreadTestViewController.h; sourceTree = "<group>"; };
-		59F6CF601F3B5D59003226E3 /* NEMultiThreadTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEMultiThreadTestViewController.m; sourceTree = "<group>"; };
 		59F6CF621F3EE69C003226E3 /* NEClangTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEClangTest.h; sourceTree = "<group>"; };
 		59F6CF631F3EE69C003226E3 /* NEClangTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEClangTest.m; sourceTree = "<group>"; };
+		59F6CF741F518077003226E3 /* NEAnimationTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEAnimationTestViewController.h; sourceTree = "<group>"; };
+		59F6CF751F518077003226E3 /* NEAnimationTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEAnimationTestViewController.m; sourceTree = "<group>"; };
+		59F6CF761F518077003226E3 /* NEAutolayoutScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEAutolayoutScrollViewController.h; sourceTree = "<group>"; };
+		59F6CF771F518077003226E3 /* NEAutolayoutScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEAutolayoutScrollViewController.m; sourceTree = "<group>"; };
+		59F6CF781F518077003226E3 /* NELogPrintViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NELogPrintViewController.h; sourceTree = "<group>"; };
+		59F6CF791F518077003226E3 /* NELogPrintViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NELogPrintViewController.m; sourceTree = "<group>"; };
+		59F6CF7A1F518077003226E3 /* NEMainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEMainTableViewController.h; sourceTree = "<group>"; };
+		59F6CF7B1F518077003226E3 /* NEMainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEMainTableViewController.m; sourceTree = "<group>"; };
+		59F6CF7C1F518077003226E3 /* NEMultiThreadTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEMultiThreadTestViewController.h; sourceTree = "<group>"; };
+		59F6CF7D1F518077003226E3 /* NEMultiThreadTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEMultiThreadTestViewController.m; sourceTree = "<group>"; };
+		59F6CF7E1F518077003226E3 /* NEResponderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEResponderViewController.h; sourceTree = "<group>"; };
+		59F6CF7F1F518077003226E3 /* NEResponderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEResponderViewController.m; sourceTree = "<group>"; };
+		59F6CF801F518077003226E3 /* NETableViewTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NETableViewTestViewController.h; sourceTree = "<group>"; };
+		59F6CF811F518077003226E3 /* NETableViewTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NETableViewTestViewController.m; sourceTree = "<group>"; };
 		6303EEFF3407121D2EDD83A7 /* libPods-NEJobLearningUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NEJobLearningUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		638A989AA6542E7B518C2B5C /* libPods-DynamicLibTestTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DynamicLibTestTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B8CAAD4F891045D38EF66E9 /* Pods-DynamicLibTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicLibTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DynamicLibTest/Pods-DynamicLibTest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -277,21 +280,10 @@
 		592E6DB51F22EF4A007D8220 /* NEJobLearning */ = {
 			isa = PBXGroup;
 			children = (
-				592E6DBC1F22EF4A007D8220 /* NEAnimationTestViewController.h */,
-				592E6DBD1F22EF4A007D8220 /* NEAnimationTestViewController.m */,
-				592B340C1F2786D500418385 /* NEMainTableViewController.h */,
-				592B340D1F2786D500418385 /* NEMainTableViewController.m */,
-				59A014911F2623A90001F826 /* NETableViewTestViewController.h */,
-				59A014921F2623A90001F826 /* NETableViewTestViewController.m */,
-				592B340F1F29B8A900418385 /* NELogPrintViewController.h */,
-				592B34101F29B8A900418385 /* NELogPrintViewController.m */,
-				59F6CF5F1F3B5D59003226E3 /* NEMultiThreadTestViewController.h */,
-				59F6CF601F3B5D59003226E3 /* NEMultiThreadTestViewController.m */,
-				592B34211F2DCC1A00418385 /* NEResponderViewController.h */,
-				592B34221F2DCC1A00418385 /* NEResponderViewController.m */,
 				59F6CF471F32D61C003226E3 /* NECategoryTest.h */,
 				59F6CF481F32D61C003226E3 /* NECategoryTest.m */,
 				592E6DBF1F22EF4A007D8220 /* Main.storyboard */,
+				59F6CF731F51802D003226E3 /* ViewControllers */,
 				592B341D1F2DC9A700418385 /* views */,
 				592E6DB61F22EF4A007D8220 /* Supporting Files */,
 			);
@@ -356,6 +348,27 @@
 				59ABFE891F23A4DB003544B1 /* Info.plist */,
 			);
 			path = DynamicLibTestTests;
+			sourceTree = "<group>";
+		};
+		59F6CF731F51802D003226E3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				59F6CF741F518077003226E3 /* NEAnimationTestViewController.h */,
+				59F6CF751F518077003226E3 /* NEAnimationTestViewController.m */,
+				59F6CF761F518077003226E3 /* NEAutolayoutScrollViewController.h */,
+				59F6CF771F518077003226E3 /* NEAutolayoutScrollViewController.m */,
+				59F6CF781F518077003226E3 /* NELogPrintViewController.h */,
+				59F6CF791F518077003226E3 /* NELogPrintViewController.m */,
+				59F6CF7A1F518077003226E3 /* NEMainTableViewController.h */,
+				59F6CF7B1F518077003226E3 /* NEMainTableViewController.m */,
+				59F6CF7C1F518077003226E3 /* NEMultiThreadTestViewController.h */,
+				59F6CF7D1F518077003226E3 /* NEMultiThreadTestViewController.m */,
+				59F6CF7E1F518077003226E3 /* NEResponderViewController.h */,
+				59F6CF7F1F518077003226E3 /* NEResponderViewController.m */,
+				59F6CF801F518077003226E3 /* NETableViewTestViewController.h */,
+				59F6CF811F518077003226E3 /* NETableViewTestViewController.m */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		64B074FEDB3A06DA9F220F57 /* Pods */ = {
@@ -879,21 +892,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				592E6DBE1F22EF4A007D8220 /* NEAnimationTestViewController.m in Sources */,
 				592E6DBB1F22EF4A007D8220 /* AppDelegate.m in Sources */,
 				59F6CF521F35BCA6003226E3 /* NELineWrap.m in Sources */,
+				59F6CF841F518077003226E3 /* NELogPrintViewController.m in Sources */,
 				59F6CF491F32D61C003226E3 /* NECategoryTest.m in Sources */,
-				592B34231F2DCC1A00418385 /* NEResponderViewController.m in Sources */,
-				592B34111F29B8A900418385 /* NELogPrintViewController.m in Sources */,
 				592E6DB81F22EF4A007D8220 /* main.m in Sources */,
+				59F6CF821F518077003226E3 /* NEAnimationTestViewController.m in Sources */,
 				592B34201F2DC9B100418385 /* NEEnlargedButton.m in Sources */,
 				592B34261F2DF39A00418385 /* NESpecialResponseView.m in Sources */,
+				59F6CF831F518077003226E3 /* NEAutolayoutScrollViewController.m in Sources */,
 				59F6CF5C1F3A0FEE003226E3 /* NENoResponseView.m in Sources */,
-				592B340E1F2786D500418385 /* NEMainTableViewController.m in Sources */,
-				59A014931F2623A90001F826 /* NETableViewTestViewController.m in Sources */,
+				59F6CF851F518077003226E3 /* NEMainTableViewController.m in Sources */,
 				59F6CF531F35BCA6003226E3 /* NETouchDrawView.m in Sources */,
-				59F6CF611F3B5D59003226E3 /* NEMultiThreadTestViewController.m in Sources */,
 				59F6CF641F3EE69C003226E3 /* NEClangTest.m in Sources */,
+				59F6CF871F518077003226E3 /* NEResponderViewController.m in Sources */,
+				59F6CF861F518077003226E3 /* NEMultiThreadTestViewController.m in Sources */,
+				59F6CF881F518077003226E3 /* NETableViewTestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
